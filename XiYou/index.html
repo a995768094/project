@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>西游记</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+
+		}
+		html,body,.main{
+			width: 100%;
+			height: 100%;
+		}
+		body{
+			overflow: hidden;
+		}
+		.main{
+			background-image:url('https://www.17sucai.com/preview/826404/2018-06-25/xyj/imgs/2.jpg');
+			animation-name: bg;
+			animation-duration: 10s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+		.view{
+			width: 1000px;
+			height: 200px;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			right: 0px;
+			bottom: 0px;
+			margin:auto;
+		}
+		.view>div{
+			overflow: hidden;
+			float: left;
+			margin-right: 30px;
+		}
+		.wk,.bj{
+			width: 200px;
+			height: 172px;
+		}
+		.ts{
+			width: 170px;
+			height: 240px;
+		}
+		.ss{
+			width: 200px;
+			height: 182px;
+		}
+		.wk img,.bj img{
+			animation: wk_move 1s infinite steps(8);
+			/* 把当前图片分为8帧来执行 */
+			/* animation-timing-function: steps(8); */
+		}
+		.ts img{
+			animation: ts_move 1s infinite steps(8);
+		}
+		.ss img{
+			animation: ss_move 1s infinite steps(8);
+		}
+		@keyframes wk_move{
+			from {
+				margin-left: 0px;
+			}
+			to {
+				margin-left: -1600px;
+			}
+		}
+		@keyframes ts_move{
+			from {
+				margin-left: 0px;
+			}
+			to {
+				margin-left: -1360px;
+			}
+		}
+		@keyframes ss_move{
+			from {
+				margin-left: 0px;
+			}
+			to {
+				margin-left: -1680px;
+			}
+		}
+		@keyframes bg{
+			0% {background-position: 0 0;}
+		    100% {background-position: 1920px 0;}
+
+		}
+	</style>
+</head>
+<body>
+	<div class="main"></div>
+	<div class="view">
+		<div class="wk">
+			<img src="https://www.17sucai.com/preview/826404/2018-06-25/xyj/imgs/west_01_3ca39fe.png">
+		</div>
+		<div class="bj">
+			<img src="https://www.17sucai.com/preview/826404/2018-06-25/xyj/imgs/west_02_47bad19.png">
+		</div>
+		<div class="ts">
+			<img src=" https://www.17sucai.com/preview/826404/2018-06-25/xyj/imgs/west_03_f962447.png">
+		</div>
+		<div class="ss">
+			<img src="https://www.17sucai.com/preview/826404/2018-06-25/xyj/imgs/west_04_6516d80.png">
+		</div>
+	</div>
+</body>
+</html>

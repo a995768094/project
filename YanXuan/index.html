@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>网易严选</title>
+	<!-- <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_1968051_gighsuxd87u.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_1968051_2yvuv9wtkab.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_1968051_ryc9jqqd7ui.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_1968051_p2oy9nxge5.css"> -->
+	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_1968051_tmxykxpke9.css">
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		html,body,.main{
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		
+		.main>.top{
+			height: 36px;
+			width: 1520px;
+			background-color: #333;
+		}
+		/* 头部样式 */
+		.header{
+			width: 1520px;
+			height: 140px;
+		}
+		/* 轮播图 */
+		.image{
+			height: 420px;
+			width: 100%;
+		}
+		/* 尾部 */
+		.footer{
+			width: 1520px;
+			height: 549px;
+		}
+		/* 内容部分大块占据屏幕100% */
+		.content>div{
+			width: 100%;
+			height: 550px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+
+		}
+		.content>div.content_two{
+			width: 100%;
+			height: 650px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.content>div.content_two>div{
+			width: 1090px;
+			height: 620px;
+			/* background-color: #ccc; */
+			position: relative;
+			background-color: #f4f0ea;
+		}
+		/* 内容部分小块占据部分 */
+		.content>div>div{
+			width: 1090px;
+			height: 520px;
+			/* background-color: #ccc; */
+			position: relative;
+			background-color:#f4f0ea;
+		}
+		/* 尾部白色部分样式 */
+		.footer_top{
+			width: 60%;
+			height: 50%;
+			/* background-color: blue; */
+			margin: 0 auto;
+		}
+		/* 尾部黑色部分样式 */
+		.footer_bottom{
+			width: 100%;
+			height: 50%;
+			background-color: #333;
+		}
+		/* 头部网易严选和搜索框样式 */
+		.header_top{
+			height: 70%;
+			width: 70%;
+			/* background-color: red; */
+			margin: 0 auto;
+		}
+		/* 头部尾部标签栏目样式 */
+		.header_bottom{
+			height: 30%;
+			width: 70%;
+			/* background-color: teal; */
+			margin: 0 auto;
+		}
+		/* 头部ul样式 */
+		.header_bottom ul{
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: space-between;
+
+		}
+		/* 头部li标签样式 */
+		.header_bottom li{
+			list-style: none;
+			color: #000;
+			font-size: 17px;
+			font-weight: 700;
+			line-height: 42px;
+			cursor: pointer;
+
+		}
+
+
+		/* 顶部喇叭和通知整体div边框样式 */
+		.top>.top_laba{
+			position: relative;
+		}
+		/* 顶部喇叭通知喇叭样式 */
+		.top>.top_laba>i{
+			color: #CC9756;
+			font-size: 14px;
+			margin-left: 16%;
+			position: absolute;
+			top: 10px;
+		}
+		/* 顶部喇叭通知字体样式 */
+		.top>.top_laba>p{
+			color: #CC9756;
+			font-size: 14px;
+			margin-left: 17%;
+			position: absolute;
+			top: 8px;
+		}
+		/* 顶部右上角列表div整体样式 */
+		.top>.top_list{
+			height: 36px;
+			float: right;
+			margin-right: 230px;
+			/* position: relative; */
+		}
+		/* 顶部右上角li样式 */
+		.top>.top_list>ul>li{
+			border-left: 1px solid #aaa; 
+			list-style: none;
+			font-size: 12px;
+			color: #aaa;
+			font-weight: bold;
+			float: left;
+			height: 36px;
+			line-height: 36px;
+			width: 70px;
+			text-align: center;
+			cursor: pointer;
+		}
+		/* 顶部右上角ul样式 */
+		.top>.top_list>ul{
+			height: 36px;
+			float: right;
+
+		}
+		/* 顶部右上角li标签下的div样式设置 */
+		.top>.top_list>ul>li>div{
+			width: 70px;
+			background-color: #fff;
+			color: #b4a078;
+			margin-top: 0px;
+			align-items: center;
+			display: none;
+			/* position: absolute; */
+			border-radius: 5px;
+			position: relative;
+			z-index: 1;	
+		}
+		/* 顶部右上角li标签悬浮时候div显示 */
+		.top>.top_list>ul>li:hover >div{
+			display: block;
+		}
+		/* 顶部右上角li标签悬浮时候div内部a标签样式 */
+		.top>.top_list>ul>li>div>a{
+			display: block;
+			border-bottom: 1px solid #aaa;
+		}
+		/* 头部搜索框div设置样式 */
+		.header>.header_top>.search>.search_search{
+			border: 1px solid #cc9756;
+			border-radius: 20px;
+			height: 40px;
+			width: 500px;
+			margin-left: 150px;
+		}
+		/* 头部搜索框下div的样式 */
+		.header .search>.search_text{
+			color: #cc9756;
+			margin-left: 160px;
+			display: flex;
+			align-items: center;
+		}
+		/* 头部搜索框下a标签样式 */
+		.header .search>.search_text>a{
+			font-size: 13px;
+			color: #cc9756;
+			text-decoration: none;
+		}
+		/* 头部购物车div样式 */
+		.header>.header_top>.shop{
+			width: 136px;
+			height: 40px;
+			border: 1px solid #cc9756;
+			border-radius: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-left: 90px;
+			font-size: 17px;
+			font-weight: 600;
+			color: #cc9756;
+			cursor: pointer;
+		}
+		/* 轮播图里面的img格式 */
+		.img>img{
+			width: 100%;
+			height: 100%;
+		}
+		/* 头部首页标签li标签悬浮显示div */
+		.main>.header>.header_bottom li:hover >div{
+			display: block;
+		}
+		/* 头部首页标签li标签下div的样式 */
+		.main>.header>.header_bottom li>div{
+			background-color: #fff;
+			height: 400px;
+			width: 1200px;
+			display: none;
+			position: absolute;
+			margin-top: -7px;
+			left: calc(50% - 600px);
+		}
+		/* 内容部分图片列表项ul样式 */
+		.content_one .image>ul{
+			width: 1090px;
+			height: 520px;
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		/* 内容部分图片列表项li样式 */
+		.content_one .image>ul>li{
+			width: 265px;
+			height: 360px;
+			background-color: #fff;
+			list-style: none;
+			float: left;
+			
+		}
+		/* 内容部分图片列表顶部div样式 */
+		.content .message{
+			height: 40px;
+			width: 1090px;
+			/* background-color: red; */
+			position: absolute;
+			top: 30px;
+
+		}
+		/* 内容部分图片列表顶部div样式的标题样式 */
+		.content .message .title{
+			font-size: 28px;
+		    font-weight: 700;
+		    float: left;
+		    margin-right: 20px;
+		}
+		/* 内容部分图片列表顶部div样式的提示信息样式 */
+		.content .message .little{
+			display: inline-block;
+   			line-height: 1;
+   			margin-top: 15px;
+   			color: #333;
+   			font-size: 14px;
+		}
+		/* 内容部分图片列表顶部div样式的链接样式 */
+		.content .message .blue{
+			display: inline-block;
+		    line-height: 1;
+		    padding-top: 14px;
+		    cursor: pointer;
+		    font-size: 14px;
+		    text-decoration: none;
+		    position: absolute;
+		    right: 30px;
+		    color: #333;
+		}
+		/* 满减优惠标签 */
+		.manjian{
+			height: 20px;
+		    line-height: 20px;
+		    color: #fff;
+		    padding: 0 5px;
+		    display: flex;
+			align-items: center;
+			/* background-color: lightblue; */
+			justify-content: center;
+		    
+		}
+		/* 满减优惠下p标签样式 */
+		.manjian>p{
+		    background-color: #e36844;
+		    color: #fff;
+		    font-size: 12px;
+		}
+		/* 产品详细信息div样式 */
+		.product{
+			height: 50px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: flex-start;
+			/* background-color: teal; */
+			/* flex-direction:colum; */
+		}
+
+		/* 产品信息a标签详细字体设置 */
+		.product>a{
+			text-decoration: none;
+			font-size: 13px;
+			width: 155px;
+			color: #333;
+			font-weight: bold;
+			text-align: center;
+			display: block;
+		}
+		/* 产品信息价格详细字体设置 */
+		.product>.price{
+			width: 100%;
+			font-size: 13px;
+			color: #d4282d;
+			text-align: center;
+			/* background-color: pink; */
+		}
+		/* 制造厂商标签 */
+		.zhizao{
+			height: 20px;
+		    line-height: 20px;
+		    color: #fff;
+		    padding: 0 5px;
+		    display: flex;
+			align-items: center;
+			justify-content: center;
+		    
+		}
+		/* 制造厂商标签下p标签样式 */
+		.zhizao>p{
+		    background-color: #F28F2D;
+		    color: #fff;
+		    font-size: 12px;
+		}
+		/* 产品信息价格原来价格详细字体设置 */
+		.product>.price>.price_delete{
+			width: 100%;
+			font-size: 12px;
+   			color: #999;
+			display: inline;
+			text-decoration: line-through;
+		}
+		/* 底部顶部三个大div布局 */
+		.footer>.footer_top{
+			display: flex;
+			height: 200px;
+		}
+		.footer>.footer_top>.footer_top1{
+			flex: 1;
+			border-right: 1px solid #aaa;
+		}
+		.footer>.footer_top>.footer_top2{
+			flex: 1;
+			border-right: 1px solid #aaa;
+		}.footer>.footer_top>.footer_top3{
+			flex: 1;
+		}
+		/* 脚本内部div */
+		.footer_top>div>.footer_content{
+			height: 144px;
+			/* border: 1px solid red; */
+		}
+		/* footer内部div top1-top3 */
+		.footer_top>div{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			/* border-right: 1px solid #aaa; */
+		}
+		/* 尾部div标题样式 */
+		.footer_content>.title{
+			font-size: 16px;
+		    font-weight: 400;
+		    color: #333;
+		    text-align: center;
+		    height: 30px;
+		}
+		/* footer第一个框两个div排列 */
+		.footer_top1>.footer_content>:nth-child(2),.footer_top1>.footer_content>:nth-child(3){
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.footer_top1>.footer_content>:nth-child(2) *,.footer_top1>.footer_content>:nth-child(3) *{
+			text-align: center;
+			margin: auto;
+		}
+		
+		/* 轮播图动画设置 */
+		@keyframes lunbo{
+			0%{
+				margin-left: 0px;
+			}
+			20%{
+				margin-left: -1520px;
+			}
+			40%{
+				margin-left: -3040px;
+			}
+			60%{
+				margin-left: -4560px;
+			}
+			80%{
+				margin-left: -6080px;
+			}
+			100%{
+				margin-left: -7600px;
+			}
+		}
+		/* 轮播图外边框设置隐藏 */
+		.header+div.image{
+			width: 1520px;
+			height: 420px;
+			margin: 0 auto;
+			overflow: -moz-hidden-unscrollable;
+		}
+		/* 相当于inner */
+		.header+div.image>div{
+			width: 9120px;
+			height: 420px;
+			animation-name: lunbo;
+			animation-duration: 20s;
+			animation-iteration-count: infinite;
+		}
+		/* 轮播图下img格式 */
+		.header+div.image>div>img{
+			float: left;
+			height: 420px;
+			width: 1520px;
+		}
+		/* 设置轮播图鼠标放置时显示点击以及暂停动画 */
+		.header+div.image>div:hover{
+			animation-play-state: paused;
+			cursor: pointer;
+		}
+		/* 底部黑色部分上半部分大div设置样式 */
+		.footer>.footer_bottom>.bottom_1{
+			/* background-color: teal; */
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			width: 100%;
+			height: 50%;
+			border-bottom: 1px solid #aaa;
+		}
+		/* 底部黑色部分上半部分小的div设置样式 */
+		.footer>.footer_bottom>.bottom_1>div{
+			/* background-color: pink; */
+			width: 200px;
+			height: 50px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		/* 黑色部分圆圈样式 */
+		.footer>.footer_bottom>.bottom_1>div>.circle{
+			box-sizing: border-box;
+			width: 50px;
+			height: 50px;
+			border: 3px solid #fff;
+			border-radius: 50%;
+		}
+		/* 黑色部分圆圈后的字体样式 */
+		.footer>.footer_bottom>.bottom_1>div>.title{
+			font-size: 18px;
+			font-weight: 300;
+			color: #fff;
+			margin-left: 10px;
+		}
+		/* 尾部第一行链接li样式 */
+		.footer .bottom_2 li{
+			list-style: none;
+			cursor: pointer;
+			float: left;
+			font-size: 12px;
+			color: #999;
+		}
+		/* 鼠标悬浮变色 */
+		.footer .bottom_2 li:hover{
+			color: #fff;
+		}
+		/* 设置第一行居中显示 */
+		.footer .bottom_2>div>ul{
+			height: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		/* 尾部第一行li后面添加样式 */
+		.footer .bottom_2 li::after{
+			content: ' | ';
+		}
+		.footer .bottom_2 li:last-child::after{
+			content: '';
+		}
+		/* 尾部第2-4行样式 */
+		.footer .bottom_2 a{
+			cursor: pointer;
+			float: left;
+			font-size: 12px;
+			color: #999;
+			text-decoration: none;
+		}
+		.footer .bottom_2 a:hover{
+			color: #fff;
+		}
+		.footer .bottom_2 p{
+			cursor: text;
+			float: left;
+			font-size: 12px;
+			color: #999;
+		}
+		/* 尾部2-4行居中显示 */
+		.footer .bottom_2>.a{
+			height: 50px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		/* 第二部分内容img布局 */
+		.content_two>div>.image{
+			height: 600px;
+			width: 100%;
+			margin-top: 80px;
+			/* background-color: coral; */
+
+		}
+		/* 内容部分第二部分左部分布局 */
+		.content_two>div>.image>.left{
+			float: left;
+			height: 533px;
+			width: 390px;
+			background-color: #fff;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+		/* 内容部分第二部分右部分布局 */
+		.content_two>div>.image>.right{
+			height: 540px;
+			width: calc(100% - 390px);
+			float: right;
+		}
+		/* 内容部分第二部分右部分六个图片布局 */
+		.content_two>div>.image>.right>div{
+			height: 266px;
+			width: 225px;			
+			float: left;
+			background-color: #fff;
+			margin: 1px;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+		/* 内容第三部分图片整体div设置 */
+		.content_three>div>.img{
+			width: 100%;
+			height: 400px;
+			position: relative;
+    		top: 90px;
+    		display: flex;
+    		justify-content: space-between;
+    		background-color: #fff;
+		}
+		/* 内容第三部分图片左设置 */
+		.content_three>div>.img>.left{
+			height: 100%;
+			width: 230px;
+		}
+		/* 内容第三部分图片中设置 */
+		.content_three>div>.img>.center{
+			width: 600px;
+			height: 100%;
+		}
+		/* 内容第三部分图片右设置 */
+		.content_three>div>.img>.right{
+			height: 100%;
+			width: 200px;
+			/* background-color: coral; */
+		}
+		/* 内容第三部分图片标题栏目设置 */
+		.content_three>div>.img .title{
+			font-size: 16px;
+			float: left;
+			line-height: 70px;
+
+		}
+		/* 内容第三部分图片小字栏目设置 */
+		.content_three>div>.img .little{
+			font-size: 12px;
+			float: right;
+			cursor: pointer;
+			line-height: 70px;
+			margin-right: 20px;
+		}
+		/* 内容第三部分中间部分下div设置格式 */
+		.content_three>div>.img>.center>.img>div{
+			height: 130px;
+			width: 46%;
+			/* background-color: red; */
+			margin: 6px;
+			display: inline-block;
+			/* display: flex inline-block; */
+			align-items: center;
+			justify-content: center;
+			margin-top: 20px;
+		}
+		/* 内容第三部分中间部分下div设置img格式 */
+		.content_three>div>.img>.center>.img>div>img{
+			height: 130px;
+			width: 130px;
+			float: left;
+			border: 0px;
+		}
+		/* 内容第三部分中间部分下div设置img信息介绍格式 */
+		.content_three>div>.img>.center>.img>div .message1{
+			font-size: 14px;
+			line-height: 20px;
+			color: #333;
+			margin-left: 5px;
+		}
+		/* 内容第三部分中间部分下div设置img显示信息格式 */
+		.content_three>div>.img>.center>.img>div .xianshi{
+			font-size: 14px;
+			margin-left: 5px;
+			color: #BE4141;
+		}
+		/* 内容第三部分中间部分下div设置img价格信息格式 */
+		.content_three>div>.img>.center>.img>div .price{
+			font-size: 20px;
+			color: #BE4141;
+			font-weight: 700;
+		}
+		/* 内容第三部分中间部分下div设置img价格信息格式 */
+		.content_three>div>.img>.center>.img>div .￥{
+			font-size: 12px;
+			color: #BE4141;
+		}
+		/* 内容第三部分中间部分下div设置img价格删除信息格式 */
+		.content_three>div>.img>.center>.img>div .price_delete{
+			color: #A4A4A4;
+			font-size: 14px;
+			text-decoration: line-through;
+			margin-left: 5px;
+		}
+		/* 内容第三部分中间部分下div设置img立即抢购格式 */
+		.content_three>div>.img>.center>.img>div a{
+			width: 90px;
+			height: 28px;
+			font-size: 12px;
+			background-color: #BB3343;
+			color: #fff;
+			text-decoration: none;
+			display: block;
+			line-height: 28px;
+			text-align: center;
+			margin-left: 10px;
+		}
+		/* 第三部分内容右部分两个div设置 */
+		.content_three>div>.img>.right>div{
+			height: 50%;
+			width: 100%;
+			margin: 0px;
+		}
+		.content_three>div>.img>.right>div>.one{
+			height: 50px;
+			width: 200px;
+			/* background-color: red; */
+			clear: both;
+			margin-bottom: 20px;
+		}
+		.content_three>div>.img>.right>div>.one>img{
+			height: 50px;
+			width: 50px;
+		}
+		.content_three>div>.img>.right>div>.one>img+div{
+			height: 50px;
+			width: calc(100% - 60px);
+			/* background-color: red; */
+			float: right;
+			margin-left: 10px;
+		}
+		.content_three>div>.img>.right>div>.one>img+div>a{
+			font-size: 14px;
+			text-decoration: none;
+			width: 150px;
+			color: #333;
+			/* width: 100%; */
+			float: left;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow:ellipsis;
+		}
+		.content_three>div>.img>.right>div>.one>img+div>span{
+			font-size: 14px;
+			color: #be4141;
+			display: inline-block;
+			margin-top: 10px;
+		}
+		.content_three>div>.img>.right>div>.one>img+div>i{
+			color: #b4a078;
+			height: 24px;
+			width: 24px;
+			float: right; 
+			margin-top: 8px;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="top">
+			<!-- 顶部左上角喇叭和喇叭文本 -->
+			<div class="top_laba">
+				<i class="iconfont icon-horn"></i>
+				<p>关于就修改《吃货任务-奖品发放活动规则》公开征求意见的公告</p>
+			</div>
+			<!-- 顶部右上角标签栏目 -->
+			<div class="top_list">
+				<ul>
+					<li>登录/注册</li> 
+					<li>我的订单</li>
+					<li>会员</li>
+					<li>甄选家</li>
+					<li>企业采购
+						<i class="iconfont icon-xiajiantou"></i>
+						<div>
+							<a>企业购</a>
+							<a>礼品卡</a>
+							<a>联系我们</a>
+						</div>
+					</li>
+					<li>客户服务
+						<!-- 导入下箭头的iconfont -->
+						<i class="iconfont icon-xiajiantou"></i>
+						<div>
+							<a>在线客服</a>
+							<a>帮助中心</a>
+							<a>商务合作</a>
+							<a>开放平台</a>
+						</div>
+					</li>
+					<li>
+						<!-- 导入下箭头的iconfont -->
+						<i class="iconfont icon-phone"></i>APP</li>
+				</ul>
+			</div>
+		</div>
+		<div class="header">
+			<div class="header_top" style="display: flex;align-items: center;">
+				<!-- 网易严选图片 -->
+				<img src="./images/网易严选.png" style="width: 210px;height: 65px;">
+				<!-- 搜索框以及搜索框以下内容 -->
+				<div class="search">
+					<!-- 搜索框内容 -->
+					<div class="search_search" style="display: flex;align-items: center;justify-content: center;background-color: white;">
+						<i class="iconfont icon-sousuosearch82" style="font-size: 30px;"></i>
+						<input type="text" style="height: 100%;width: 400px;border: 0px;">
+						<div style="background-color: #cc9756;height: 100%;width:90px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;text-align: center;line-height: 40px;font-size: 18px;letter-spacing: 2px;color: #fff;font-weight: 500;cursor: pointer;">搜索</div>
+					</div>
+					<!-- 搜索框以下文本内容 -->
+					<div class="search_text">
+						<a href="">&nbsp;筷子节美食3件85折&nbsp;</a>&nbsp;|&nbsp;
+						<a href="">&nbsp;防霉除湿&nbsp;</a>&nbsp;|&nbsp;
+						<a href="">&nbsp;快递绿色回收 倡议书</a>
+					</div>
+				</div>
+				<!-- 头部右上角购物车标识 -->
+				<div class="shop">
+					<i class="iconfont icon-gouwuche"></i>&nbsp;
+					<p>购物车</p>
+					<i style="width: 20px;height: 20px;border-radius: 50%;background-color: red;color: #fff;text-align: center;font-family: 微软雅黑;">0</i>
+				</div>
+			</div>
+			<div class="header_bottom">
+				<ul>
+					<li>首页</li>
+					<li>居家生活
+						<div>
+							1111
+						</div>
+					</li>
+					<li>服饰鞋包
+						<div>
+							111111
+						</div>
+					</li>
+					<li>美食酒水
+						<div>
+							
+						</div>
+					</li>
+					<li>个护清洁
+						<div>
+							
+						</div>
+					</li>
+					<li>母婴亲子
+						<div>
+							
+						</div>
+					</li>
+					<li>运动旅行
+						<div>
+							
+						</div>
+					</li>
+					<li>数码家电
+						<div>
+							
+						</div>
+					</li>
+					<li>严选全球
+						<div>
+							
+						</div>
+					</li>
+					<li>为你严选</li>
+					<li>众筹</li>
+				</ul>
+			</div>
+		</div>
+		<div class="image">
+			<div>		
+				<img src="https://yanxuan.nosdn.127.net/cc79c044a98678e3ad03594ed0f7ada1.jpg?type=webp&imageView&quality=95&thumbnail=1920x420">
+				<img src="https://yanxuan.nosdn.127.net/01dd02764fdd2bdace16f441e0da5c45.jpg?type=webp&imageView&quality=95&thumbnail=1920x420">
+				<img src="https://yanxuan.nosdn.127.net/5bd95fa4a80f897a40f709ad37e9a65a.jpg?type=webp&imageView&quality=95&thumbnail=1920x420">
+				<img src="https://yanxuan.nosdn.127.net/5fb903900e7149956d5b2a8231f0e9a5.png?type=webp&imageView&quality=95&thumbnail=1920x420">	
+				<img src="https://yanxuan.nosdn.127.net/dd0916482a349ba9b48c1ef4060b6454.jpg?type=webp&imageView&quality=95&thumbnail=1920x420">
+				<img src="http://yanxuan-miaobi.nos-jd.163yun.com/3989758_1_1_web_67fdcbb1c07fb5a5c6bfc5e1fa4861f4.jpg?type=webp&imageView&quality=95&thumbnail=1920x420">
+			</div>
+		</div>
+		<div class="content">
+			<div class="content_one">
+				<div>
+					<div class="message">
+						<div class="title">新品首发</div>
+						<div class="little">为你寻觅世间好物</div>
+						<a class="blue" href="http://you.163.com/item/newItem?_stat_area=newItem_link&_stat_referer=index">更多新品&nbsp;&gt;</a>
+					</div>
+					<div class="image">
+						<ul>
+							<li>
+								<img src="https://yanxuan-item.nosdn.127.net/4cf591db7d08ef4787508aff0959189d.png?type=webp&quality=95&thumbnail=265x265&imageView">
+								<div class="manjian">
+									<p>每满99减15券</p>
+								</div>
+								<div class="product">
+									<a href="">一颗洗8件 日本超浓缩48小时抗菌消臭洗衣液</a>
+									<div class="price">￥59</div>
+								</div>
+							</li>
+							<li>
+								<img src="https://yanxuan-item.nosdn.127.net/a82912add6abd8a78b34ace57e8ef2ce.png?type=webp&quality=95&thumbnail=265x265&imageView">
+								<div class="zhizao">
+									<p>杭州制造</p>
+								</div>
+								<div class="product">
+									<a href="">切丝擦丝切蒜辅食 家用食物多功能料理机</a>
+									<div class="price">￥29.9</div>
+								</div>
+							</li>
+							<li>
+								<img src="https://yanxuan-item.nosdn.127.net/cd8e1e49743f2f2a0067ebb4bc0e58a7.png?type=webp&quality=95&thumbnail=265x265&imageView">
+								<div class="manjian">
+									<p>每满99减15券</p>
+								</div>
+								<div class="product">
+									<a href="">万古不易，锁味增鲜 日本万古烧饭釜0.5L</a>
+									<div class="price">￥149</div>
+								</div>
+							</li>
+							<li>
+								<img src="https://yanxuan-item.nosdn.127.net/3af7fadcc544ee7a0ff40990a70cae9e.png?type=webp&quality=95&thumbnail=265x265&imageView">
+								<div class="manjian">
+									<p>特价</p>
+								</div>
+								<div class="product">
+									<a href="">女式可机洗天丝平底鞋</a>
+									<div class="price">￥134
+										<div class="price_delete">￥149</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="content_two">
+				<div>
+					<div class="message">
+						<div class="title">人气推荐</div>
+						<a class="blue" href="http://you.163.com/item/recommend?_stat_area=pop_more&_stat_referer=index">更多推荐&nbsp;&gt;</a>
+					</div>
+					<div class="image">
+						<div class="left">
+							<img src="https://yanxuan-item.nosdn.127.net/3334651215305fdf04d7f1da2b0a1a0b.png?type=webp&quality=95&thumbnail=320x320&imageView">
+							<div class="manjian">
+								<p>换购</p>&nbsp;&nbsp;
+								<p>每满150减20券</p>
+							</div>
+							<div class="product">
+								<a href="" style="font-size: 18px;width: 248px;">可爱健康不要胖，全价成猫粮 1.8千克</a>
+								<div class="price" style="color: #d4282d;font-size:18px;">￥99</div>
+							</div>
+						</div>
+						<div class="right">
+							<div>
+								<img src="https://yanxuan-item.nosdn.127.net/2c0147161faaa160cf10b6770f1e290d.png?type=webp&quality=95&thumbnail=180y180&imageView">
+								<div class="manjian">
+									<p>每满99减15券</p>
+								</div>
+								<div class="product">
+									<a href="">清新英国梨香 强力去污酵素洗衣液3kg/1kg</a>
+									<div class="price">￥49.9</div>
+								</div>
+							</div>
+							<div>
+								<img src="https://yanxuan-item.nosdn.127.net/073f16bf0c7ad8634c3abb7636e063c2.png?type=webp&quality=95&thumbnail=180y180&imageView">
+								<div class="manjian">
+									
+								</div>
+								<div class="product">
+									<a href="">轻弹云朵居家拖鞋</a>
+									<div class="price">￥9.9</div>
+								</div>
+							</div>
+							<div>
+								<img src="https://yanxuan-item.nosdn.127.net/8b4f2e0d2e2ed5202300ec0afe405317.png?type=webp&quality=95&thumbnail=180y180&imageView">
+								<div class="manjian">
+									<div class="zhizao" style="display: inline-block">
+										<p>宁波制造</p>
+									</div>
+									<p>每满99减15券</p>
+								</div>
+								<div class="product">
+									<a href="">【丁磊直播款】男式精梳棉圆领短袖T恤衫</a>
+									<div class="price">￥49</div>
+								</div>
+							</div>
+							<div>
+								<img src="https://yanxuan-item.nosdn.127.net/22cfd602403ca6a026a439e08e3e3127.png?type=webp&quality=95&thumbnail=180y180&imageView">
+								<div class="manjian">
+									<p>换购</p>&nbsp;&nbsp;
+									<p>每满99减15券</p>
+								</div>
+								<div class="product">
+									<a href="">远优于欧盟标准，纯牛奶 250 毫升*24盒</a>
+									<div class="price">￥88</div>
+								</div>
+							</div>
+							<div>
+								<img src="https://yanxuan-item.nosdn.127.net/da0321f5813855f287c274e1d8a7cf9f.png?type=webp&quality=95&thumbnail=180y180&imageView">
+								<div class="manjian">
+									<div class="zhizao" style="display: inline-block">
+										<p>浙江制造</p>
+									</div>
+									<p>每满99减15券</p>
+								</div>
+								<div class="product">
+									<a href="">【限量抢购中】一次性医用级三层口罩</a>
+									<div class="price">￥20
+										<div class="price_delete">￥139</div>
+									</div>
+									
+								</div>
+							</div>
+							<div>
+								<img src="https://yanxuan-item.nosdn.127.net/488a81259dec9371232b37d133e1bbb8.png?type=webp&quality=95&thumbnail=180y180&imageView">
+								<div class="manjian">
+									<p>新人特价</p>
+								</div>
+								<div class="product">
+									<a href="">告别啃食尴尬，秘制无骨凤爪 108克</a>
+									<div class="price">￥13
+										<div class="price_delete">￥22</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content_three">
+				<div>
+					<div class="message">
+						<div class="title">限时购</div>
+						<a class="blue" href="http://you.163.com/flashSale/index?_stat_area=mod_limit_more&_stat_referer=index">更多抢购&nbsp;&gt;</a>
+					</div>
+					<div class="img">
+						<div class="left">
+							<img src="https://yanxuan.nosdn.127.net/4d2ea84d9b30fe4d4a0cdac7fdd2dddc.jpg?type=webp&imageView&quality=95&thumbnail=224x376" style="height: 100%;width: 100%;">
+						</div>
+						<div class="center">
+							<div class="top" style="height: 70px;width: 100%;">
+								<p class="title">今日特价</p>
+								<p class="little">查看全部&nbsp;&gt;</p>
+							</div>
+							<div class="img" style="height: calc(100% - 70px);width: 100%;">
+								<div>
+									<img src="https://yanxuan-item.nosdn.127.net/22cfd602403ca6a026a439e08e3e3127.png?type=webp&quality=95&thumbnail=130x130&imageView">
+									
+									<div style="height: 100%;width: 146px;display: inline-block;float: left;">
+										<p class="message1">远优于欧盟标准，纯牛奶 250 毫升*24盒</p>
+										<span class="xianshi">限时价</span>
+										<span class="￥">￥</span>
+										<span class="price">88</span>
+										
+										<br><br><br>
+										<a href="">立即抢购</a>
+									</div>
+								</div>
+								<div>
+									<img src="https://yanxuan-item.nosdn.127.net/02b395ef8e9c2c2f4e8b5a530c24fafa.png?type=webp&quality=95&thumbnail=130x130&imageView">
+									<div style="height: 100%;width: 146px;display: inline-block;float: left;">
+										<p class="message1">只选当日鲜奶发酵，常温酸牛奶 200克*24盒</p>
+										<span class="xianshi">限时价</span>
+										<span class="￥">￥</span>
+										<span class="price">95</span>
+										<br><br><br>
+										<a href="">立即抢购</a>
+									</div>
+								</div>
+								<div>
+									<img src="https://yanxuan-item.nosdn.127.net/15f7d8d9535f72d91d8a9230432f784b.png?type=webp&quality=95&thumbnail=130x130&imageView">
+									<div style="height: 100%;width: 146px;display: inline-block;float: left;">
+										<p class="message1">“冬病夏治”三伏天艾灸，无烟便携艾灸盒</p>
+										<span class="xianshi">限时价</span>
+										<span class="￥">￥</span>
+										<span class="price">309</span>
+										<p class="price_delete">
+										￥399</p>
+										<br>
+										<a href="">立即抢购</a>
+									</div>
+								</div>
+								<div>
+									<img src="https://yanxuan-item.nosdn.127.net/45ec948ec31c4c4108ec9ece4edf9556.png?type=webp&quality=95&thumbnail=130x130&imageView">
+									<div style="height: 100%;width: 146px;display: inline-block;float: left;">
+										<p class="message1">法国年份雅文邑 700毫升</p>
+										<span class="xianshi">限时价</span>
+										<span class="￥">￥</span>
+										<span class="price">1528</span>
+										<p class="price_delete">
+										￥1598</p>
+										<br>
+										<a href="">立即抢购</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="right">
+							<div>
+								<div class="top" style="height: 70px;width: 100%;">
+								<p class="title">量版囤货</p>
+								<p class="little">全部&nbsp;&gt;</p>
+								</div>
+								<div class="one">
+									<img src="https://yanxuan-item.nosdn.127.net/4fc7ea43e829af4ed31e09673f68db89.png?type=webp&quality=95&thumbnail=50x50&imageView">
+									<div>
+										<a href="" style="font-size: 14px">本色抑菌懒人抹布超值组</a>
+										<span>￥119</span>
+										<i class="iconfont icon-gouwuche"></i>
+									</div>
+								</div>
+								<div class="one">
+									<img src="https://yanxuan-item.nosdn.127.net/e22add3a371e8d06202a5c04109cf08b.png?type=webp&quality=95&thumbnail=50x50&imageView">
+									<div>
+										<a href="">三味演义冻干方便面 12盒</a>
+										<span>￥79</span>
+										<i class="iconfont icon-gouwuche"></i>
+									</div>
+								</div>
+							</div>
+							<div>
+								<div class="top" style="height: 70px;width: 100%;">
+								<p class="title">今日买赠</p>
+								<p class="little">全部&nbsp;&gt;</p>
+								</div>
+								<div class="one">
+									<img src="https://yanxuan-item.nosdn.127.net/71f683fe9b19abd1b0f550a81797cd3c.png?type=webp&quality=95&thumbnail=50x50&imageView">
+									<div>
+										<a href="" style="font-size: 14px">【紫外线杀菌消毒】智能声控升降晾衣架</a>
+										<span>￥1499</span>
+										<i class="iconfont icon-gouwuche"></i>
+									</div>
+								</div>
+								<div class="one">
+									<img src="https://yanxuan-item.nosdn.127.net/a517938254c7d2f480827debf355127a.png?type=webp&quality=95&thumbnail=50x50&imageView">
+									<div>
+										<a href="">15分钟缓解颈椎酸痛，EMS颈椎按摩仪</a>
+										<span>￥199</span>
+										<i class="iconfont icon-gouwuche"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- <div></div>
+			<div></div>
+			<div></div> -->
+		</div>
+		<div class="footer">
+			<div class="footer_top">
+				<div class="footer_top1">
+					<div class="footer_content">
+						<div class="title">客户服务</div>
+						<div style="width:80px;height: 100px;float:left;border:1px solid #aaa; ">
+							<i class="iconfont icon-kefu" style="width: 100%;font-size: 24px;"></i>
+							<div>在线客服</div>
+						</div>
+						<div style="margin-left: 40px;width:80px;height: 100px;float:left;border:1px solid #aaa; ">
+							<i class="iconfont icon-dangqianhuihua" style="width: 100%;font-size: 24px;"></i>
+							<div>用户反馈</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer_top2">
+					<div  class="footer_content"  style="width: 100%;justify-content: center;">
+						<div class="title" >何为严选</div>
+						<div style="width: 80%;margin-left: 10%;font-size: 13px;color: #333;">网易原创生活类电商品牌，秉承网易一贯的严谨态度，我们深入世界各地，从源头全程严格把控商品生产环节，力求帮消费者甄选到优质的商品</div>
+						<div style="display: flex;align-items: center;justify-content: center;">
+						<p style="font-size: 14px;color: #333;display: inline;">关注我们：</p>
+						<img src="./images/微博.png" style="width: 130px;height: 40px;;">
+						</div>
+					</div>
+				</div>
+				<div class="footer_top3">
+					<div  class="footer_content">
+						<div class="title">扫码下载严选APP</div>
+						<div  style="display: flex;align-items:center;justify-content: center;">
+							<img src="./images/二维码.png" style="width: 120px;height: 120px;">
+						</div>
+						<div  style="display: flex;align-items:center;justify-content: center;font-size: 12px;color: #b4a078;">
+							<p>下载领大额新人红包</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer_bottom">
+				<div class="bottom_1">
+					<div>
+						<div class="circle"></div>
+						<div class="title">网易自营电商</div>
+					</div>
+					<div>
+						<div class="circle"></div>
+						<div class="title">30天无忧退换货</div>
+					</div>
+					<div>
+						<div class="circle"></div>
+						<div class="title">满99元免邮费</div>
+					</div>
+					<div>
+						<div class="circle"></div>
+						<div class="title">品质保证</div>
+					</div>
+				</div>
+				<div class="bottom_2">
+					<div>
+						<ul>
+							<li>&nbsp;&nbsp;关于我们</li>
+							<li>&nbsp;&nbsp;帮助中心</li>
+							<li>&nbsp;&nbsp;售后服务</li>
+							<li>&nbsp;&nbsp;配送与验收</li>
+							<li>&nbsp;&nbsp;商务合作</li>
+							<li>&nbsp;&nbsp;企业采购</li>
+							<li>&nbsp;&nbsp;开放平台</li>
+							<li>&nbsp;&nbsp;搜索推荐</li>
+							<li>&nbsp;&nbsp;友情链接</li>
+							<li>&nbsp;&nbsp;廉正举报</li>
+						</ul>
+					</div>
+					<div class="a">
+						<div>
+						<a href="">食品经营许可证：JY13301080111719&nbsp;&nbsp;</a>
+						<a href="">出版物经营许可证：新出发滨字第0132号&nbsp;&nbsp;</a>
+						<p>妙得ICP证号：ICP 证浙B2-20160106&nbsp;&nbsp;</p>
+						<a href="">浙杭食药监械经营备20171029号&nbsp;&nbsp;</a>
+						<a href="">营业执照&nbsp;&nbsp;</a>
+						<p>网易公司版权所有 © 1997-2020</p>
+						</div>
+						<div style="display: block">
+						<a href="">无线电发射设备销售备案：42202011096855&nbsp;&nbsp;</a>
+						<a href="">（浙杭）网械企备字[2019]第00119号&nbsp;&nbsp;</a>
+						<p>（粤）网械平台备字（2019）第00004号&nbsp;&nbsp;</p>
+						<p>（粤）-非经营性-2016-0023</p>
+						</div>
+						<div>
+						<p>浙江省网络食品销售第三方平台提供者备案：浙网食A33010009&nbsp;&nbsp;</p>
+						<a href="">单用途商业预付卡备案证：330100AAC0024</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
