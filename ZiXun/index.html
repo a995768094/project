@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页面</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<style>
+    *{
+        margin:0px;
+        padding:0px;
+    }
+    body,html{
+        height: 100%;
+        width: 100%;
+    }
+    body > div{
+        /* width: 100%; */
+        height: 100%;
+        opacity: 1;
+        background-image: url('./images/bgimg.jpg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        -moz-background-size:1000%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    body div.login > div{
+        height: 250px;
+        width: 300px;
+        border-radius: 5px;
+        border:1px solid #333;
+    }
+     form input{
+        font-size: 14px;
+        line-height: 2em;
+        border-radius: 5px;
+    }
+    form label,button{
+        margin-left: calc(50% - 110px);
+    }
+    form>div{
+        font-size: 17px;
+        color: aquamarine;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        background:rgba(127, 255, 212, 0.3);
+        
+    }
+    form>button{
+        /* margin-left: calc(50% - 10px); */
+        margin-left: 35%;
+        box-sizing: content-box;
+        width: 20%;
+    }
+    
+</style>
+<body>
+    <div class="login">
+        <div>
+            <form action="">
+                <div>登录</div>
+                <br>
+                <label for="username">用户名:</label><input type="text" placeholder="请输入用户名" id="username">
+                <br><br>
+                <label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;码:</label><input type="text" placeholder="请输入密码" id="password">
+                <br>
+                <br>
+                <button type="button" class="btn btn-primary">登录</button>
+            </form>
+            
+        </div>
+    </div>
+    
+    
+    <script>
+        
+        $('button').click(function(){
+        //1. 获取用户名和密码框的值
+            var username = $('#username').val();
+            var password = $('#password').val();
+            // 2.请求登录接口
+            $.ajax({
+                url:'http://localhost:7788/user/login',
+                method:'POST',
+                data:JSON.stringify({
+                    password,
+                    username
+                }),
+                contentType:'application/json',
+                success:function(res){
+                    if(res.status===500){
+                        alert(res.message)
+                    }
+                    else{
+                        $.ajaxSetup({
+                        Headers:{'Authorization':res.data.token}
+                    })
+                    // 将token设置到浏览器中
+                    localStorage.setItem('token',res.data.token);
+                    $.get('http://localhost:7788/user/info',{token:res.data.token},function(res){
+                        // console.log(res);
+                        // 将用户信息存储到浏览器
+                        localStorage.setItem('userInfo',JSON.stringify(res.data))
+                    })
+                    //页面跳转
+                        location.href = 'http://47.100.58.59/Project/ZiXun/home.html';
+                    
+                    }
+                    
+                }
+            })
+        })
+    </script>
+</body>
+</html>
