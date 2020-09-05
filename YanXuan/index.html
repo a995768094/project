@@ -3,1224 +3,4278 @@
 <head>
 	<meta charset="UTF-8">
 	<title>网易严选</title>
-	<!-- <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_1968051_gighsuxd87u.css"> -->
-	<!-- <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_1968051_2yvuv9wtkab.css"> -->
-	<!-- <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_1968051_ryc9jqqd7ui.css"> -->
-	<!-- <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_1968051_p2oy9nxge5.css"> -->
-	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_1968051_tmxykxpke9.css">
 	<style type="text/css">
 		*{
-			margin: 0px;
-			padding: 0px;
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
 		}
 		html,body,.main{
 			width: 100%;
 			height: 100%;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
 		}
-		
-		.main>.top{
+		li{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		/* 顶部 */
+		.top{
+			width: 100%;
 			height: 36px;
-			width: 1520px;
 			background-color: #333;
 		}
-		/* 头部样式 */
+		/* 顶部内容 */
+		.top>.top_content{
+			width: 1090px;
+			height: 36px;
+			margin: 0 auto;
+			line-height: 36px;
+			font-size: 12px;
+		}
+		/* 顶部左上角广告 */
+		.top>.top_content>.ad{
+			width: 400px;
+			height: 36px;
+			float: left;
+		}
+		/* 顶部左上角广告喇叭的样式 */
+		.top>.top_content>.ad>img{
+			position: relative;
+			bottom: 11px;
+			left: 2px;
+			padding-right: 10px;
+		}
+		/* 顶部左上角广告字的样式 */
+		.top>.top_content>.ad>ul{
+			height: 36px;
+			overflow: hidden;
+			display: inline-block;
+		}
+		.top>.top_content>.ad>ul>li>a{
+			color: #CC9756;
+			text-decoration: underline;
+		}
+		/* 顶部左上角广告鼠标悬浮是字变为白色 */
+		.top>.top_content>.ad>ul>li>a:hover{
+			color: #fff;
+			text-decoration: none;
+		}
+		.top>.top_content>.user{
+			float: right;
+			height: 36px;
+		}
+		.top>.top_content>.user>div{
+			display: inline-block;
+			cursor: pointer;
+			color: #ccc;
+			height: 36px;
+			margin-left: 6px;
+		}
+		.top>.top_content>.user>div>a{
+			color: #ccc;
+			padding-left: 10px;
+			border-left: 1px solid #5c5c5c;
+		}
+		.top>.top_content>.user>.login:hover{
+			color: #fff;
+		}
+		.top>.top_content>.user>div:hover>a{
+			color: #fff;
+		}
+		.top>.top_content>.user>div:nth-child(5)>a>i{
+			background-image: url('./images/icon.webp');
+			background-position: 0px -690px;
+			width: 11px;
+			height: 5px;
+			display: inline-block;
+			transform: rotateX(180deg);
+			margin-left: 10px;
+		}
+		.top>.top_content>.user>div:nth-child(5){
+			position: relative;
+		}
+		.top>.top_content>.user>div:nth-child(5):hover>.caigou{
+			display: block;
+		}
+		.top>.top_content>.user>div:nth-child(5)>.caigou{
+			width: 80px;
+			height: 110px;
+			background-color: #fff;
+			position: absolute;
+			padding: 2px 0;
+			box-shadow: 0px 0px 3px #888;
+			display: none;
+			z-index: 3;
+		}
+		.top>.top_content>.user>div:nth-child(5)>.caigou>a{
+			display: block;
+			margin: 0 13px;
+			border-top: 1px solid #ddd;
+			text-align: center;
+			color: #999;
+		}
+		.top>.top_content>.user>div:nth-child(5)>.caigou>a:hover{
+			color: #b4a078;
+		}
+		.top>.top_content>.user>div:nth-child(5)>.caigou>a:first-child{
+			border: 0;
+		}
+
+		.top>.top_content>.user>div:nth-child(6)>a>i{
+			background-image: url('./images/icon.webp');
+			background-position: 0px -690px;
+			width: 11px;
+			height: 5px;
+			display: inline-block;
+			transform: rotateX(180deg);
+			margin-left: 10px;
+		}
+		.top>.top_content>.user>div:nth-child(6){
+			position: relative;
+		}
+		.top>.top_content>.user>div:nth-child(6):hover>.service{
+			display: block;
+		}
+		.top>.top_content>.user>div:nth-child(6)>.service{
+			width: 80px;
+			height: 150px;
+			background-color: #fff;
+			position: absolute;
+			padding: 2px 0;
+			box-shadow: 0px 0px 3px #888;
+			display: none;
+		}
+		.top>.top_content>.user>div:nth-child(6)>.service>a{
+			display: block;
+			margin: 0 13px;
+			border-top: 1px solid #ddd;
+			text-align: center;
+			color: #999;
+		}
+		.top>.top_content>.user>div:nth-child(6)>.service>a:hover{
+			color: #b4a078;
+		}
+    	.top>.top_content>.user>div:nth-child(6)>.service>a:first-child{
+			border: 0;
+		}
+		/* APP前的手机图标 */
+		.top>.top_content>.user>div:last-child>a>i{
+			background-image: url('./images/icon.webp');
+			background-position: 0px 0px;
+			width: 7px;
+			height: 11px;
+			display: inline-block;
+			margin-right: 6px;
+		}
+		/* APP */
+		.top>.top_content>.user>div:last-child{
+			position: relative;
+		}
+		/* 鼠标悬浮在app时显示的 */
+		.top>.top_content>.user>div:last-child>.app{
+			width: 135px;
+			height: 140px;
+			background-color: #fff;
+			position: absolute;
+			left: -50px;
+			padding: 5px 0;
+			text-align: center;
+			display: none;
+			box-shadow: 0px 0px 3px #888;
+		}
+		.top>.top_content>.user>div:last-child>.app>div{
+			height: 125px;
+		}
+		/* 二维码 */
+		.top>.top_content>.user>div:last-child>.app>div>img{
+			width: 117px;
+			height: 117px;
+		}
+		.top>.top_content>.user>div:last-child>.app>p{
+			color: #b4a078;
+			line-height: 1;
+		}
+		/* 鼠标悬浮在app时显示 */
+		.top>.top_content>.user>div:last-child:hover>.app{
+			display: block;
+		}
 		.header{
-			width: 1520px;
+			width: 100%;
 			height: 140px;
 		}
-		/* 轮播图 */
-		.image{
-			height: 420px;
+		.header-top{
+			width: 1090px;
+			height: 110px;
+			margin: 0 auto;
+		}
+		.header_top_logo{
+			background-image: url('./images/icon.webp');
+			background-position: 0 -298px;
+			width: 212px;
+			height: 60px;
+			margin-top: ;
+			display: inline-block;
+			margin-top: 24px;
+			cursor: pointer;
+		}
+		.header_top_right{
+			display: inline-block;
+			float: right;
+			width: 715px;
+		}
+		.header_top_search{
+			display: inline-block;
+			width: 540px;
+			height: 40px;
+			position: relative;
+			float: left;
+			margin-top: 26px;
+		}
+		.header_top_search>.search_box>i{
+			background-image: url('./images/icon.webp');
+			background-position: 0 -518px;
+			width: 14px;
+			height: 14px;
+			position: absolute;
+			top: 12px;
+			left: 18px;
+		}
+		.header_top_search>.search_box>input{
+			width: 442px;
+			height: 38px;
+			line-height: 38px;
+			padding: 2px 0 2px 38px;
+			border: 1px solid #CC9756;
+			border-bottom-left-radius: 19px;
+			border-top-left-radius: 19px;
+			font-size: 14px;
+			outline: none;
+			float: left;
+
+		}
+		.header_top_search>.search_box>button{
+			width: 90px;
+			height: 38px;
+			font-size: 16px;
+			color: #fff;
+			line-height: 38px;
+			background-color: #CC9756;
+			border-bottom-right-radius: 19px;
+			border-top-right-radius: 19px;
+			border: 0;
+			outline: none;
+			cursor: pointer;
+		}
+		.header_top_search>.search_could{
+			margin-top: 8px;
+		}
+		.header_top_search>.search_could>a{
+			font-size: 12px;
+			line-height: 12px;
+			padding: 0 10px;
+			border-left: 1px solid #ccc;
+			float: left;
+			color: #CC9756;
+		}
+		.header_top_search>.search_could>a:first-child{
+			border: 0;
+			padding-left: 15px;
+		}
+		.Cart{
+			width: 134px;
+			height: 38px;
+			box-sizing: border-box;
+			display: inline-block;
+			float: right;
+			margin-top: 26px;
+			padding: 8px 0;
+			border: 1px solid #CC9756;
+			border-radius: 19px;
+			text-align: center;
+			font-size: 14px;
+			color: #cc9756;
+			cursor: pointer;
+		}
+		.Cart>i{
+			width: 18px;
+			height: 18px;
+			background-image: url('./images/icon.webp');
+			background-position: 0 -148px;
+			display: inline-block;
+			vertical-align: top;
+			margin-left: 5px;
+		}
+		.Cart>span:last-child{
+			width: 19px;
+			height: 19px;
+			background-image: url('./images/icon.webp');
+			background-position: 0 -51px;
+			display: inline-block;
+			color: #fff;
+			vertical-align: top;
+			margin-left: 5px;
+		}
+
+
+
+		.header-bottom{
+			width: 1090px;
+			height: 30px;
+			margin: 0 auto;
+		}
+		.header-bottom ul{
 			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: space-between;
 		}
-		/* 尾部 */
-		.footer{
-			width: 1520px;
-			height: 549px;
+		.header-bottom li>a{
+			list-style: none;
+			color: #000;
+			font-size: 14px;
+			font-weight: 800;
+			line-height: 30px;
+			padding-bottom: 3px;
 		}
-		/* 内容部分大块占据屏幕100% */
-		.content>div{
+		.header-bottom li{
+			padding: 0 25px;
+		}
+		.header-bottom li:first-child>a{
+			color: #CC9756;
+			border-bottom: 3px solid #CC9756;
+			padding-left: 0;
+		}
+		.header-bottom li:first-child{
+			padding-left: 0;
+		}
+		.header-bottom li:last-child{
+			padding-right: 0;
+		}
+		.header-bottom li:hover>a{
+			border-bottom: 3px solid #CC9756;
+			color: #CC9756;
+		}
+	
+
+
+
+
+
+		.image{
+			width: 100%;
+			height: 420px;
+			background-color: lightblue;
+			animation-name: lunbo;
+			animation-duration: 40s;
+			animation-iteration-count: infinite;
+			background-position: center 0;
+			background-repeat: no-repeat;
+		}
+		/* lunbo */
+		@keyframes lunbo{
+			0%{
+				background-image: url('./images/image1.webp');
+			}
+			14.2%{
+				background-image: url('./images/image2.webp');
+			}
+			28.4%{
+				background-image: url('./images/image3.webp');
+			}
+			42.6%{
+				background-image: url('./images/image4.webp');
+			}
+			56.8%{
+				background-image: url('./images/image5.webp');
+			}
+			71%{
+				background-image: url('./images/image6.webp');
+			}
+			85.2%{
+				background-image: url('./images/image7.webp');
+			}
+			100%{
+				background-image: url('./images/image1.webp');
+			}
+		}
+
+
+		.content>.NEW{
+			width: 1349px;
+			height: 510px;
+			margin: 0 auto;
+			position: relative;
+		}
+		.content>.NEW>.new_all{
+			box-sizing: border-box;
+			width: 1090px;
+			height: 510px;
+			margin-top: 30px;
+			margin-left: auto;
+			margin-right: auto;
+			overflow: hidden;
+		}
+		.name_top{
+			height: 28px;
+			margin-bottom: 20px;
+			line-height: 1;
+		}
+		.name{
+			font-size: 28px;
+			line-height: 28px;
+			float: left;
+			margin-right: 20px;
+			cursor: pointer;
+		}
+		.name:hover{
+			color: #b4a078;
+		}
+		.name_top>span{
+			padding-top: 13px;
+			font-size: 14px;
+			float: left;
+			line-height: 1;
+		}
+		.name_top>.subCateList{
+			height: 28px;
+			display: inline-block;
+			float: right;
+			padding-top: 14px;
+			font-size: 14px;
+		}
+		.name_top>.subCateList>a{
+			color: #333;
+			line-height: 1;
+		}
+		.name_top>.subCateList>.more{
+			margin-left: 30px;
+		}
+		.name_top>.subCateList>a:hover{
+			color: #b4a078;
+		}
+		.name_top>.subCateList>b{
+			margin: 0 13px;
+		}
+		.new_content{
+			width: 3000px;
+			height: 364px;
+		}
+		.Sesame{
+			height: 364px;
+			display: inline-block;
+			overflow: hidden;
+			margin-right: 10px;
+			overflow: hidden;
+			float: left;
+		}
+		.Sesame>.img{
+			width: 265px;
+			height: 265px;
+			margin-bottom: 8px;
+			cursor: pointer;
+			background-color: #f4f4f4;
+			
+		}
+		.Sesame:hover{
+			background-color: #efefef;
+			box-shadow: 3px 1px 5px #ddd;
+		}
+		.new_content>.Sesame:first-child>.img{
+			background-image: url('./images/Sesame1_1.webp');
+		}
+		.new_content>.Sesame:first-child:hover>.img{
+			background-image: url('./images/Sesame1_2.webp');
+		}
+		.new_content>.Sesame:nth-child(2)>.img{
+			background-image: url('./images/Sesame2_1.webp');
+		}
+		.new_content>.Sesame:nth-child(2):hover>.img{
+			background-image: url('./images/Sesame2_2.webp');
+		}
+		.new_content>.Sesame:nth-child(3)>.img{
+			background-image: url('./images/Sesame3_1.webp');
+		}
+		.new_content>.Sesame:nth-child(3):hover>.img{
+			background-image: url('./images/Sesame3_2.webp');
+		}
+		.new_content>.Sesame:nth-child(4)>.img{
+			background-image: url('./images/Sesame4_1.webp');
+		}
+		.new_content>.Sesame:nth-child(4):hover>.img{
+			background-image: url('./images/Sesame4_2.webp');
+		}
+		.new_content>.Sesame:nth-child(5)>.img{
+			background-image: url('./images/Sesame5_1.webp');
+		}
+		.new_content>.Sesame:nth-child(5):hover>.img{
+			background-image: url('./images/Sesame5_2.webp');
+		}
+		.new_content>.Sesame:nth-child(6)>.img{
+			background-image: url('./images/Sesame6_1.webp');
+		}
+		.new_content>.Sesame:nth-child(6):hover>.img{
+			background-image: url('./images/Sesame6_2.webp');
+		}
+		.new_content>.Sesame:nth-child(7)>.img{
+			background-image: url('./images/Sesame7_1.webp');
+		}
+		.new_content>.Sesame:nth-child(7):hover>.img{
+			background-image: url('./images/Sesame7_2.webp');
+		}
+		.new_content>.Sesame:nth-child(8)>.img{
+			background-image: url('./images/Sesame8_1.webp');
+		}
+		.new_content>.Sesame:nth-child(8):hover>.img{
+			background-image: url('./images/Sesame8_2.webp');
+		}
+		.text>.maked{
+			display: flex;
+			justify-content: center;
+		}
+		.text>.maked>span{
+			font-size: 12px;
+			line-height: 20px;
+			padding: 0 5px;
+			background-color: #e36844;
+			color: #fff;
+			margin-left: 6px;
+		}
+		.text>.maked>.madein{
+			background-color: #F28F2D;
+		}
+		.text>.introduce{
+			display: flex;
+			justify-content: center;
+			margin: 5px 0 5px;
+		}
+		.text>.introduce>a{
+			width: 156px;
+			text-align: center;
+			font-size: 13px;
+			color: #333;
+			line-height: 20px;
+			font-weight: 600;
+		}
+		.text>.price{
+			height: 13px;
+			padding-top: 1px;
+			display: flex;
+			justify-content: center;
+		}
+		.text>.price>span{
+			line-height: 13px;
+			height: 13px;
+			padding: 0;
+			font-size: 13px;
+			color: #d4282d;
+		}
+		.text>.price>span:nth-child(2){
+			line-height: 13px;
+			height: 13px;
+			padding: 0;
+			font-size: 12px;
+			color: #999;
+			position: relative;
+			top: 1px;
+			text-decoration:line-through;
+		}
+		.button_left{
+			background-image: url('./images/icon2.webp');
+			background-position: 0 -5408px;
+			width: 50px;
+			height: 50px;
+			background-color: #E2C199;
+			border: 0;
+			border-radius: 50%;
+			outline: none;
+			position: absolute;
+			left: 70px;
+			top: 200px;
+			cursor: pointer;
+		}
+		.button_left:focus+.new_content{
+			animation-name: left;
+			animation-duration: 1s;
+			animation-iteration-count: 1;
+			animation-fill-mode: forwards;
+		}
+		.button_right{
+			background-image: url('./images/icon2.webp');
+			background-position: 0 -5628px;
+			width: 50px;
+			height: 50px;
+			background-color: #E2C199;
+			border: 0;
+			border-radius: 50%;
+			outline: none;
+			position: absolute;
+			left: 1230px;
+			top: 200px;
+			cursor: pointer;
+		}
+		.button_right:focus~.new_content{
+			animation-name: right;
+			animation-duration: 1s;
+			animation-iteration-count: 1;
+			animation-fill-mode: forwards;
+		}
+		@keyframes left{
+			from {
+				margin-left: -1100px;
+			}
+			to {
+				margin-left: 0px;
+			}
+		}
+		@keyframes right{
+			from {
+				margin-left: 0px;
+			}
+			to {
+				margin-left: -1100px;
+			}
+		}
+
+		.Popularity{
+			height: 738px;
+			padding: 60px 0;
+			box-sizing: border-box;
+			background-color: #F4F0EA;
+		}
+		.Popularity_all{
+			width: 1090px;
+			height: 618px;
+			background-color: #eee;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.Popularity_all>.name_top>ul{
+			width: 250px;
+			height: 28px;
+			float: left;
+			display: flex;
+			margin-left: 13px;
+		}
+		.Popularity_all>.name_top>ul>li{
+			width: 70px;
+			text-align: center;
+			font-size: 14px;
+			line-height: 28px;
+			margin-right: 55px;
+			color: #333;
+			cursor: pointer;
+		}
+		.Popularity_all>.name_top>ul>li:first-child{
+			color: #b4a078;
+			border-bottom: 2px solid #b4a078;
+		}
+		.Popularity_all>.name_top>ul>li:hover{
+			color: #b4a078;
+		}
+		.Popularity_content{
+			width: 223px;
+			height: 280px;
+			background-color: #fff;
+			float: left;
+			display: inline-block;
+		}
+		.Popularity_content:first-child{
+			width: 390px;
+			height: 570px;
+		}
+		.Popularity_content:nth-child(2),.Popularity_content:nth-child(3),.Popularity_content:nth-child(4){
+			margin-left: 10px;
+		}
+		.Popularity_content:nth-child(5),.Popularity_content:nth-child(6),.Popularity_content:nth-child(7){
+			margin-left: 10px;
+			margin-top: 10px;
+		}
+		.Popularity_content>.img{
+			width: 223px;
+			height: 180px;
+			margin-bottom: 8px;
+			border-bottom: 1px solid #F4F0EA;
+			position: relative;
+		}
+		.Popularity_content:first-child>.img{
+			width: 390px;
+			height: 401px;
+			margin-bottom: 18px;
+		}
+		.Popularity_content>.img>a>.Popularity1{
+			margin: 0 21.5px;
+			transition: all 2s linear;
+		}
+		.Popularity_content>.img>a>.Popularity1:hover{
+			transform: scale(1.1);
+		}
+		.Popularity_content:first-child>.img>a>.Popularity1{
+			margin: 40px 35px;
+		}
+		.Popularity_content>.img>a>.tejia{
+			background-image: url('./images/tejia.png');
+			background-repeat: no-repeat;
+			width: 223px;
+			height: 30px;
+			position: absolute;
+			bottom: 1px;
+		}
+		.Popularity_content:first-child>.img>a>.tejia{
+			width: 390px;
+			height: 30px;
+		}
+		.Popularity_content>.img>a>.tejia>.tejia_left{
+			background-image: url('./images/tejia_left.webp');
+			background-size: auto 100%;
+			background-repeat: no-repeat;
+			background-position: right;
+			box-sizing: border-box;
+			width: 70px;
+			height: 36px;
+			position: absolute;
+			bottom: 0;
+			color: #fff;
+			text-align: center;
+		}
+		.Popularity_content>.img>a>.tejia>.tejia_left>span{
+			margin-left: -4px;
+			line-height: 1;
+			overflow: hidden;
+			font-size: 12px;
+		}
+		.Popularity_content>.img>a>.tejia>.tejia_left>.price{
+			font-size: 14px;
+			font-weight: 700;
+			margin-left: -4px;
+			line-height: 1;
+		}
+		.Popularity_content:first-child>.img>a>.tejia>.tejia_left{
+			width: 70px;
+			height: 36px;
+		}
+		.Popularity_content>.img>a>.tejia>.tejia_right{
+			width: 153px;
+			height: 30px;
+			box-sizing: border-box;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			padding-left: 10px;
+			font-size: 12px;
+			line-height: 30px;
+			color: #fff; 
+		}
+		.Popularity_content:first-child>.img>a>.tejia>.tejia_right{
+			width: 320px;
+			height: 30px;
+		}
+		.Popularity_content:first-child>.text>.introduce>a{
+			width: 234px;
+			text-align: center;
+			font-size: 18px;
+			color: #333;
+			line-height: 26px;
+			font-weight: 600;
+			margin: 5px 0 10px 0;
+		}
+		.Popularity_content:first-child>.text>.introduce>a:hover{
+			color: #b4a078;
+		}
+		.Popularity_content:first-child>.text>.price{
+			height: 28px;
+			padding-top: 1px;
+			display: flex;
+			justify-content: center;
+		}
+		.Popularity_content:first-child>.text>.price>span{
+			line-height: 18px;
+			height: 18px;
+			padding: 0;
+			font-size: 18px;
+			color: #d4282d;
+		}
+		.Popularity_content:first-child>.text>.price>span:nth-child(2){
+			line-height: 18px;
+			height: 18px;
+			padding: 0;
+			font-size: 14px;
+			color: #999;
+			position: relative;
+			top: 2px;
+			text-decoration:line-through
+		}
+		.purchase{
+			width: 100%;
+			height: 595px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.purchase_all{
+			width: 1090px;
+			height: 477px;
+			box-sizing: border-box;
+			margin: 58px auto 60px;
+		}
+		.purchasecontent{
+			width: 1090px;
+			height: 429px;
+			box-sizing: border-box;
+		}
+		.purchase_left{
+			width: 224px;
+			height: 429px;
+			float: left;
+			box-sizing: border-box;
+		}
+		.purchase_left>a{
+			width: 224px;
+			height: 429px;
+			box-sizing: border-box;
+			display: inline-block;
+			background-image: url('./images/purchase_left.png');
+			background-size: 100% 100%;
+			padding-top: 60px;
+			text-align: center;
+		}
+		.purchase_left>a>.screenHd{
+			font-size: 28px;
+			height: 36px;
+			line-height: 36px;
+			color: #615548;
+		}
+		.purchase_left>a>.line{
+			width: 20px;
+			height: 2px;
+			background-color: #61594b;
+			margin: 11px auto 18px;
+		}
+		.purchase_left>a>.screenEndTips{
+			font-size: 18px;
+			height: 22px;
+			line-height: 22px;
+			color: #615548;
+			margin-bottom: 18px;
+		}
+		.purchase_left>a>.countDown{
+			width: 224px;
+			height: 40px;
+			margin-bottom: 50px;
+			text-align: center;
+		}
+		.purchase_left>a>.countDown>.w_cd{
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			color: #fff;
+			font-size: 18px;
+			line-height: 40px;
+			background-color: #615548;
+			border-radius: 2px;
+		}
+		.purchase_left>a>.countDown>.colon{
+			display: inline-block;
+			color: #000;
+			font-size: 12px;
+			font-weight: 700;
+			line-height: 40px;
+			width: 7px;
+			text-align: center;
+		}
+		.purchase_left>a>.seeMoreBtn{
+			display: inline-block;
+			width: 110px;
+			height: 30px;
+			margin: 0 auto;
+			line-height: 30px;
+			color: #fff;
+			font-size: 14px;
+			background-color: #a7936e;
+			border-radius: 15px;
+		}
+		.purchase_content{
+			width: 433px;
+			height: 214px;
+			float: left;
+			box-sizing: border-box;
+			background-color: #fff;
+			border: 1px solid #f0ece4;
+			border-left: 0;
+		}
+		.purchase_content>.lt{
+			width: 180px;
+			height: 180px;
+			margin: 3px 0;
+			float: left;
+		}
+		.purchase_content>.lt>img{
+			transition: all 2s linear;
+		}
+		.purchase_content>.lt>img:hover{
+			transform: scale(1.1);
+		}
+		.purchase_content>.rt{
+			width: 225px;
+			height: 173px;
+			float: left;
+			padding-top: 14px;
+		}
+		.purchase_content>.rt>a{
+			color: #333;
+			line-height: 26px;
+			font-size: 16px;
+			font-weight: 400;
+		}
+		.purchase_content>.rt>a:hover{
+			color: #b4a078;
+		}
+		.purchase_content>.rt>.itemDes{
+			height: 24px;
+			font-size: 14px;
+			line-height: 24px;
+			font-weight: 400;
+			color: #999;
+		}
+		.purchase_content>.rt>.itemNum{
+			padding: 14px 0 8px;
+		}
+		.purchase_content>.rt>.itemNum>.numBar{
+			width: 152px;
+			height: 10px;
+			float: left;
+			margin: 2px 0;
+			border: 1px solid #f2cecd;
+			border-radius: 5px;
+			float: left;
+			box-sizing: border-box;
+		}
+		.purchase_content>.rt>.itemNum>.numBar>.numBarIn{
+			width: 109px;
+			height: 8px;
+			background-color: #ffe5e5;
+		}
+		.purchase_content:nth-child(3)>.rt>.itemNum>.numBar>.numBarIn{
+			width: 82.5px;
+		}
+		.purchase_content:nth-child(4)>.rt>.itemNum>.numBar>.numBarIn{
+			width: 120px;
+		}
+		.purchase_content:nth-child(5)>.rt>.itemNum>.numBar>.numBarIn{
+			width: 90px;
+		}
+		.purchase_content>.rt>.itemNum>.numTips{
+			height: 14px;
+			font-size: 14px;
+			color: #999;
+			line-height: 14px;
+			margin-left: 162px;
+		}
+		.purchase_content>.rt>.itemPrice{
+			font-size: 14px;
+			line-height: 1;
+			color: #be4141;
+		}
+		.purchase_content>.rt>.itemPrice>.aPrice>.yuan{
+			font-size: 18px;
+		}
+		.purchase_content>.rt>.itemPrice>.aPrice>.aPriceIn{
+			font-size: 24px;
+			font-weight: 700;
+			margin-right: 12px;
+			vertical-align: sub;
+		}
+		.purchase_content>.rt>.itemPrice>.oPrice{
+			color: #999;
+			text-decoration: line-through;
+		}
+		.purchase_content>.rt>.tobuyBtn{
+			color: #fff;
+			width: 118px;
+			height: 31px;
+			background-color: #BE4141;
+			text-align: center;
+			line-height: 31px;
+			margin-top: 18px;
+			display: inline-block;
+			border-radius: 2px;
+		}
+		.purchase_content>.rt>.tobuyBtn:hover{
+			color: #fff;
+			opacity: 0.9;
+		}
+		.welfare{
+			width: 100%;
+			height: 526px;
+			padding: 54px 0 52px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: #F4F0EA;
+		}
+		.welfare>.welfare_all{
+			width: 1090px;
+			height: 420px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.welfare_left{
+			width: 224px;
+			height: 376px;
+			float: left;
+			/* background-color: #aaa; */
+		}
+		.welfare_right{
+			width: 866px;
+			height: 376px;
+			float: left;
+			background-color: #fff;
+		}
+		.welfare_right>.wr1{
+			width: 625px;
+			height: 376px;
+			padding: 0 17px 0 19px;
+			border-right: 1px solid #F4F0EA;
+			float: left;
+		}
+		.welfare_right>.wr2{
+			width: 241px;
+			height: 188px;
+			padding: 0 20px 0 22px;
+			float: left;
+		}
+		.wr_name{
+			height: 56px;
+			font-size: 16px;
+			line-height: 24px;
+			padding: 19px 0 12px;
+			border-bottom: 1px solid #F4F0EA;
+		}
+		.wr_name>a{
+			float: right;
+			font-size: 12px;
+			color: #333;
+			margin-top: 9px;
+			line-height: 1;
+		}
+		.welfare_right>.wr1>.wr1_con{
+			width: 608px;
+			height: 300px;
+			margin-top: 20px; 
+		}
+		.welfare_right>.wr1>.wr1_con>.wr1_content{
+			width: 284px;
+			height: 130px;
+			margin: 0 20px 20px 0;
+			float: left;
+			overflow: hidden;
+		}
+		.wr2>.wr_name{
+			height: 50px;
+			font-size: 16px;
+			line-height: 24px;
+			padding: 12px 0;
+			border: 0;
+		}
+		.wr1>.wr1_con>.wr1_content>.wr1_webp{
+			margin-right: 10px;
+			float: left;
+		}
+		.wr1_content>.wr1_text{
+			float: left;
+			width: 130px;
+		}
+		.wr1_content>.wr1_text>.wr1_name{
+			font-size: 14px;
+			line-height: 20px;
+			margin-top: 8px;
+		}
+		.wr1_content>.wr1_text>.wr1_name>a{
+			color: #333;
+		}
+		.wr1_content>.wr1_text>.wr1_name>a:hover{
+			color: #b4a078;
+		}
+		.wr1_content>.wr1_text>.limitPrice{
+			color: #BE4141;
+			font-size: 14px;
+			line-height: 1.1;
+		}
+		.wr1_content>.wr1_text>.limitPrice>.yen{
+			font-size: 12px;
+		}
+		.wr1_content>.wr1_text>.limitPrice>.num{
+			font-size: 20px;
+			font-weight: 700;
+		}
+		.wr1_content>.wr1_text>.counterPrice>span{
+			font-size: 14px;
+			line-height: 1.1;
+			color: #999;
+			text-decoration: line-through;
+		}
+		.wr1_content>.wr1_text>.wr_button{
+			width: 90px;
+			height: 28px;
+			color: #fff;
+			font-size: 12px;
+			border-radius: 2px;
+			background-color: #BE4141;
+			line-height: 26px;
+			margin-top: 5px;
+		}
+		.wr1_content>.wr1_text>.wr_button:hover{
+			opacity: 0.9;
+		}
+		.wr1_content>.wr1_text>.wr_button>a{
+			padding: 6px 21px;
+			color: #fff;
+		}
+		.wr2>.moduleBd{
+			width: 200px;
+			height: 120px;
+			overflow: hidden;
+		}
+		.wr2>.moduleBd>.item{
+			width: 200px;
+			height: 50px;
+			margin-bottom: 20px;
+		}
+		.wr2>.moduleBd>.item>.wr2_webp{
+			width: 50px;
+			height: 50px;
+			margin-right: 20px;
+			background-color: #FBF9F6;
+			float: left;
+		}
+		.wr2>.moduleBd>.item>.wr2_text{
+			float: left;
+			width: 130px;
+			font-size: 14px;
+			line-height: 1.1;
+		}
+		.wr2>.moduleBd>.item>.wr2_text>.wr2_name{
+			width: 130px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			margin: 4px 0 14px;
+		}
+		.wr2>.moduleBd>.item>.wr2_text>.wr2_name>a{
+			color: #333;
+		}
+		.wr2>.moduleBd>.item>.wr2_text>.wr2_name>a:hover{
+			color: #b4a078;
+		}
+		.wr2>.moduleBd>.item>.wr2_text>.price>.limitPrice{
+			color: #BE4141;
+		}
+		.wr2>.moduleBd>.item>.wr2_text>.price>.counterPrice{
+			color: #999;
+			text-decoration: line-through;
+		}
+		.wr2>.moduleBd>.item>.wr2_text>.price>.wr2_cart{
+			width: 24px;
+			height: 24px;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+		}
+		.wr2>.moduleBd>.item>.wr2_text>.price{
+			position: relative;
+		}
+		.wr2>.moduleBd>.item>.wr2_text>.price>.wr2_cart>i{
+			background-image: url('./images/cart.webp');
+			background-position: 0 -199px;
+			width: 24px;
+			height: 24px;
+			display: inline-block;
+			background-repeat: no-repeat;
+			
+		}
+		.m-indexCates{
+			width: 100%;
+			height: 798px;
+			margin-top: 60px;
+		}
+		.family_life{
+			width: 1090px;
+			height: 798px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.family_life>.img{
+			width: 1090px;
+			height: 310px;
+			margin-bottom: 20px;
+			background-color: lightblue;
+			animation-name: family_life;
+			animation-duration: 40s;
+			animation-iteration-count: infinite;
+			background-position: center 0;
+			background-repeat: no-repeat;
+		}
+		/* lunbo */
+		@keyframes family_life{
+			0%{
+				background-image: url('./images/family_life1.webp');
+			}
+			33.3%{
+				background-image: url('./images/family_life2.webp');
+			}
+			66.6%{
+				background-image: url('./images/family_life3.webp');
+			}
+			100%{
+				background-image: url('./images/family_life1.webp');
+			}
+		}
+		.family_life_content{
+			width: 1100px;
+			height: 411px;
+		}
+		.family_life_content>.Sesame:first-child>.img{
+			background-image: url('./images/family_life_Sesame1_1.webp');
+		}
+		.family_life_content>.Sesame:first-child:hover>.img{
+			background-image: url('./images/family_life_Sesame1_2.webp');
+		}
+		.family_life_content>.Sesame:nth-child(2)>.img{
+			background-image: url('./images/family_life_Sesame2_1.webp');
+		}
+		.family_life_content>.Sesame:nth-child(2):hover>.img{
+			background-image: url('./images/family_life_Sesame2_2.webp');
+		}
+		.family_life_content>.Sesame:nth-child(3)>.img{
+			background-image: url('./images/family_life_Sesame3_1.webp');
+		}
+		.family_life_content>.Sesame:nth-child(3):hover>.img{
+			background-image: url('./images/family_life_Sesame3_2.webp');
+		}
+		.family_life_content>.Sesame:nth-child(4)>.img{
+			background-image: url('./images/family_life_Sesame4_1.webp');
+		}
+		.family_life_content>.Sesame:nth-child(4):hover>.img{
+			background-image: url('./images/family_life_Sesame4_2.webp');
+		}
+		.Selectors{
+			width: 100%;
+			height: 428px;
+			margin-bottom: 80px;
+		}
+		.Selectors_all{
+			width: 1090px;
+			height: 428px;
+			margin: 0 auto;
+		}
+		.Selectors_Content{
+			width: 1090px;
+		}
+		.Selectors_Content>a{
+			float: left;
+			overflow: hidden;
+		}
+		.Selectors_Content>a:first-child{
+			width: 690px;
+			height: 380px;
+		}
+		.Selectors_Content>a:nth-child(2){
+			width: 390px;
+			height: 185px;
+			margin-left: 10px;
+			overflow: hidden;
+		}
+		.Selectors_Content>a:nth-child(3){
+			width: 390px;
+			height: 185px;
+			margin: 10px 0 0 10px;
+		}
+
+		
+
+
+		/* .content>div{
 			width: 100%;
 			height: 550px;
+			background-color: coral;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 
-
+		} */
+		/* .content>div>div{
+			width: 1090px;
+			height: 510px;
+			background-color: #eee;
+			margin-left: auto;
+			margin-right: auto;
 		}
-		.content>div.content_two{
+		 */
+		
+		.text>.introduce>a:hover{
+			color: #b4a078;
+		}
+		.footer{
 			width: 100%;
-			height: 650px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			height: 567px;
+			/* background-color: red; */
 		}
-		.content>div.content_two>div{
+		.footer-top{
 			width: 1090px;
-			height: 620px;
-			/* background-color: #ccc; */
-			position: relative;
-			background-color: #f4f0ea;
-		}
-		/* 内容部分小块占据部分 */
-		.content>div>div{
-			width: 1090px;
-			height: 520px;
-			/* background-color: #ccc; */
-			position: relative;
-			background-color:#f4f0ea;
-		}
-		/* 尾部白色部分样式 */
-		.footer_top{
-			width: 60%;
-			height: 50%;
+			height: 299px;
+			box-sizing: border-box;
+			padding-top: 60px;
+			padding-bottom: 34px;
 			/* background-color: blue; */
 			margin: 0 auto;
 		}
-		/* 尾部黑色部分样式 */
-		.footer_bottom{
-			width: 100%;
-			height: 50%;
-			background-color: #333;
+		.footer_top_left,.footer_top_center,.footer_top_right{
+			width: 363.33px;
+			height: 204px;
+			box-sizing: border-box;
+			border-right: 1px solid #e9e9e9;
+			float: left;
+			text-align: center;
 		}
-		/* 头部网易严选和搜索框样式 */
-		.header_top{
-			height: 70%;
-			width: 70%;
-			/* background-color: red; */
-			margin: 0 auto;
+		.footer_top_left>h4{
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 1;
+			margin-bottom: 28px;
 		}
-		/* 头部尾部标签栏目样式 */
-		.header_bottom{
-			height: 30%;
-			width: 70%;
-			/* background-color: teal; */
-			margin: 0 auto;
+		.customer_service{
+			width: 80px;
+			height: 100px;
+			display: inline-block;
+			box-sizing: border-box;
+			font-size: 14px;
+			background-color: #fff;
+			padding-top: 25px;
+			text-align: center;
+			border: 1px solid #E8E8E8;
+			color: #333;
 		}
-		/* 头部ul样式 */
-		.header_bottom ul{
-			width: 100%;
-			height: 100%;
-			display: flex;
-			justify-content: space-between;
-
+		.customer_service:hover{
+			color: #b4a078;
 		}
-		/* 头部li标签样式 */
-		.header_bottom li{
-			list-style: none;
-			color: #000;
-			font-size: 17px;
-			font-weight: 700;
-			line-height: 42px;
-			cursor: pointer;
-
+		.customer_service:hover>i{
+			background-position: 0 -254px;
 		}
-
-
-		/* 顶部喇叭和通知整体div边框样式 */
-		.top>.top_laba{
+		.customer_service>i{
+			background-image: url('./images/footer.webp');
+			background-position: 0 -290px;
+			width: 31px;
+			height: 26px;
+			display: inline-block;
+			overflow: hidden;
+		}
+		.customer_service>div{
+			width: 78px;
+			line-height: 28px;
+			margin-top: 10px;
+			display: inline-block;
+			overflow: hidden;
+		}
+		.feedback{
+			width: 80px;
+			height: 100px;
+			display: inline-block;
+			box-sizing: border-box;
+			font-size: 14px;
+			background-color: #fff;
+			padding-top: 25px;
+			margin-left: 25px;
+			text-align: center;
+			border: 1px solid #E8E8E8;
+			color: #333;
+		}
+		.feedback:hover{
+			color: #b4a078;
+		}
+		.feedback:hover>i{
+			background-position: 0 -60px;
+		}
+		.feedback>i{
+			background-image: url('./images/footer.webp');
+			background-position: 0 -97px;
+			width: 30px;
+			height: 27px;
+			display: inline-block;
+			overflow: hidden;
+		}
+		.feedback>div{
+			width: 78px;
+			line-height: 28px;
+			margin-top: 10px;
+			display: inline-block;
+			overflow: hidden;
+		}
+		.footer_top_center{
+			padding: 0 37px;
+		}
+		.footer_top_center>h4{
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 1;
+			margin-bottom: 28px;
+		}
+		.footer_top_center>p{
+			font-size: 13px;
+			line-height: 23px;
+			text-align: left;
+			margin-bottom: 22px;
+		}
+		.footer_top_center>div>span{
+			font-size: 14px;
+			line-height: 32px;
+			text-align: left;
+			margin-right: 15px;
+			float: left;
+		}
+		.footer_top_center>div>.yx{
+			background-image: url('./images/footer.webp');
+			background-position: 0 -470px;
+			height: 32px;
+			width: 32px;
+			display: inline-block;
+			float: left;
+			margin-right: 15px;
+		}
+		.footer_top_center>div>.wx{
+			background-image: url('./images/footer.webp');
+			background-position: 0 -428px;
+			height: 32px;
+			width: 32px;
+			display: inline-block;
+			float: left;
+			margin-right: 15px;
+		}
+		.yx,.wx{
 			position: relative;
 		}
-		/* 顶部喇叭通知喇叭样式 */
-		.top>.top_laba>i{
-			color: #CC9756;
-			font-size: 14px;
-			margin-left: 16%;
+		.yx>div,.wx>div{
+			width: 123px;
+			height: 125px;
+			background-color: #fff;
 			position: absolute;
+			box-shadow: 0px 0px 3px #888;
+			left: -45px;
+			top: 45px;
+			display: none;
+		}
+		.yx>div>img,.wx>div>img{
+			position: absolute;
+			left: 10px;
 			top: 10px;
 		}
-		/* 顶部喇叭通知字体样式 */
-		.top>.top_laba>p{
-			color: #CC9756;
-			font-size: 14px;
-			margin-left: 17%;
-			position: absolute;
-			top: 8px;
+		.yx:hover>div{
+			display: block;
 		}
-		/* 顶部右上角列表div整体样式 */
-		.top>.top_list{
-			height: 36px;
-			float: right;
-			margin-right: 230px;
-			/* position: relative; */
+		.wx:hover>div{
+			display: block;
 		}
-		/* 顶部右上角li样式 */
-		.top>.top_list>ul>li{
-			border-left: 1px solid #aaa; 
-			list-style: none;
-			font-size: 12px;
-			color: #aaa;
-			font-weight: bold;
+		.footer_top_center>div>.wb{
+			background-image: url('./images/footer.webp');
+			background-position: 0 -326px;
+			height: 32px;
+			width: 32px;
+			display: inline-block;
 			float: left;
-			height: 36px;
-			line-height: 36px;
-			width: 70px;
-			text-align: center;
+			margin-right: 15px;
 			cursor: pointer;
 		}
-		/* 顶部右上角ul样式 */
-		.top>.top_list>ul{
-			height: 36px;
-			float: right;
-
+		.footer_top_right{
+			border: 0;
 		}
-		/* 顶部右上角li标签下的div样式设置 */
-		.top>.top_list>ul>li>div{
-			width: 70px;
-			background-color: #fff;
+		.footer_top_right>h4{
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 1;
+			margin-bottom: 28px;
+		}
+		.footer_top_right>i{
+			background-image: url('./images/下载2.png');
+			width: 104px;
+			height: 104px;
+			background-size: 100% 100%;
+			display: inline-block;
+		}
+		.footer_top_right>div{
 			color: #b4a078;
-			margin-top: 0px;
-			align-items: center;
-			display: none;
-			/* position: absolute; */
-			border-radius: 5px;
-			position: relative;
-			z-index: 1;	
+			font-size: 12px;
+			margin-top: 3px;
 		}
-		/* 顶部右上角li标签悬浮时候div显示 */
-		.top>.top_list>ul>li:hover >div{
-			display: block;
-		}
-		/* 顶部右上角li标签悬浮时候div内部a标签样式 */
-		.top>.top_list>ul>li>div>a{
-			display: block;
-			border-bottom: 1px solid #aaa;
-		}
-		/* 头部搜索框div设置样式 */
-		.header>.header_top>.search>.search_search{
-			border: 1px solid #cc9756;
-			border-radius: 20px;
-			height: 40px;
-			width: 500px;
-			margin-left: 150px;
-		}
-		/* 头部搜索框下div的样式 */
-		.header .search>.search_text{
-			color: #cc9756;
-			margin-left: 160px;
-			display: flex;
-			align-items: center;
-		}
-		/* 头部搜索框下a标签样式 */
-		.header .search>.search_text>a{
-			font-size: 13px;
-			color: #cc9756;
-			text-decoration: none;
-		}
-		/* 头部购物车div样式 */
-		.header>.header_top>.shop{
-			width: 136px;
-			height: 40px;
-			border: 1px solid #cc9756;
-			border-radius: 20px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			margin-left: 90px;
-			font-size: 17px;
-			font-weight: 600;
-			color: #cc9756;
-			cursor: pointer;
-		}
-		/* 轮播图里面的img格式 */
-		.img>img{
+		.footer-bottom{
 			width: 100%;
-			height: 100%;
+			height: 268px;
+			background-color: #414141;
+			padding-top: 37px;
+			box-sizing: border-box;
 		}
-		/* 头部首页标签li标签悬浮显示div */
-		.main>.header>.header_bottom li:hover >div{
-			display: block;
-		}
-		/* 头部首页标签li标签下div的样式 */
-		.main>.header>.header_bottom li>div{
-			background-color: #fff;
-			height: 400px;
-			width: 1200px;
-			display: none;
-			position: absolute;
-			margin-top: -7px;
-			left: calc(50% - 600px);
-		}
-		/* 内容部分图片列表项ul样式 */
-		.content_one .image>ul{
+		.footer-bottom_all{
 			width: 1090px;
-			height: 520px;
+			height: 227px;
 			margin: 0 auto;
+		}
+		.footer_bottom_top{
 			display: flex;
 			justify-content: space-between;
-			align-items: center;
-		}
-		/* 内容部分图片列表项li样式 */
-		.content_one .image>ul>li{
-			width: 265px;
-			height: 360px;
-			background-color: #fff;
-			list-style: none;
-			float: left;
-			
-		}
-		/* 内容部分图片列表顶部div样式 */
-		.content .message{
-			height: 40px;
-			width: 1090px;
-			/* background-color: red; */
-			position: absolute;
-			top: 30px;
-
-		}
-		/* 内容部分图片列表顶部div样式的标题样式 */
-		.content .message .title{
-			font-size: 28px;
-		    font-weight: 700;
-		    float: left;
-		    margin-right: 20px;
-		}
-		/* 内容部分图片列表顶部div样式的提示信息样式 */
-		.content .message .little{
-			display: inline-block;
-   			line-height: 1;
-   			margin-top: 15px;
-   			color: #333;
-   			font-size: 14px;
-		}
-		/* 内容部分图片列表顶部div样式的链接样式 */
-		.content .message .blue{
-			display: inline-block;
-		    line-height: 1;
-		    padding-top: 14px;
-		    cursor: pointer;
-		    font-size: 14px;
-		    text-decoration: none;
-		    position: absolute;
-		    right: 30px;
-		    color: #333;
-		}
-		/* 满减优惠标签 */
-		.manjian{
-			height: 20px;
-		    line-height: 20px;
-		    color: #fff;
-		    padding: 0 5px;
-		    display: flex;
-			align-items: center;
-			/* background-color: lightblue; */
-			justify-content: center;
-		    
-		}
-		/* 满减优惠下p标签样式 */
-		.manjian>p{
-		    background-color: #e36844;
-		    color: #fff;
-		    font-size: 12px;
-		}
-		/* 产品详细信息div样式 */
-		.product{
-			height: 50px;
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			align-items: flex-start;
-			/* background-color: teal; */
-			/* flex-direction:colum; */
-		}
-
-		/* 产品信息a标签详细字体设置 */
-		.product>a{
-			text-decoration: none;
-			font-size: 13px;
-			width: 155px;
-			color: #333;
-			font-weight: bold;
-			text-align: center;
-			display: block;
-		}
-		/* 产品信息价格详细字体设置 */
-		.product>.price{
-			width: 100%;
-			font-size: 13px;
-			color: #d4282d;
-			text-align: center;
-			/* background-color: pink; */
-		}
-		/* 制造厂商标签 */
-		.zhizao{
-			height: 20px;
-		    line-height: 20px;
-		    color: #fff;
-		    padding: 0 5px;
-		    display: flex;
-			align-items: center;
-			justify-content: center;
-		    
-		}
-		/* 制造厂商标签下p标签样式 */
-		.zhizao>p{
-		    background-color: #F28F2D;
-		    color: #fff;
-		    font-size: 12px;
-		}
-		/* 产品信息价格原来价格详细字体设置 */
-		.product>.price>.price_delete{
-			width: 100%;
-			font-size: 12px;
-   			color: #999;
-			display: inline;
-			text-decoration: line-through;
-		}
-		/* 底部顶部三个大div布局 */
-		.footer>.footer_top{
-			display: flex;
-			height: 200px;
-		}
-		.footer>.footer_top>.footer_top1{
-			flex: 1;
-			border-right: 1px solid #aaa;
-		}
-		.footer>.footer_top>.footer_top2{
-			flex: 1;
-			border-right: 1px solid #aaa;
-		}.footer>.footer_top>.footer_top3{
-			flex: 1;
-		}
-		/* 脚本内部div */
-		.footer_top>div>.footer_content{
-			height: 144px;
-			/* border: 1px solid red; */
-		}
-		/* footer内部div top1-top3 */
-		.footer_top>div{
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			/* border-right: 1px solid #aaa; */
-		}
-		/* 尾部div标题样式 */
-		.footer_content>.title{
-			font-size: 16px;
-		    font-weight: 400;
-		    color: #333;
-		    text-align: center;
-		    height: 30px;
-		}
-		/* footer第一个框两个div排列 */
-		.footer_top1>.footer_content>:nth-child(2),.footer_top1>.footer_content>:nth-child(3){
-			display: flex;
-			flex-wrap: wrap;
-		}
-		.footer_top1>.footer_content>:nth-child(2) *,.footer_top1>.footer_content>:nth-child(3) *{
-			text-align: center;
-			margin: auto;
-		}
-		
-		/* 轮播图动画设置 */
-		@keyframes lunbo{
-			0%{
-				margin-left: 0px;
-			}
-			20%{
-				margin-left: -1520px;
-			}
-			40%{
-				margin-left: -3040px;
-			}
-			60%{
-				margin-left: -4560px;
-			}
-			80%{
-				margin-left: -6080px;
-			}
-			100%{
-				margin-left: -7600px;
-			}
-		}
-		/* 轮播图外边框设置隐藏 */
-		.header+div.image{
-			width: 1520px;
-			height: 420px;
-			margin: 0 auto;
-			overflow: -moz-hidden-unscrollable;
-		}
-		/* 相当于inner */
-		.header+div.image>div{
-			width: 9120px;
-			height: 420px;
-			animation-name: lunbo;
-			animation-duration: 20s;
-			animation-iteration-count: infinite;
-		}
-		/* 轮播图下img格式 */
-		.header+div.image>div>img{
-			float: left;
-			height: 420px;
-			width: 1520px;
-		}
-		/* 设置轮播图鼠标放置时显示点击以及暂停动画 */
-		.header+div.image>div:hover{
-			animation-play-state: paused;
-			cursor: pointer;
-		}
-		/* 底部黑色部分上半部分大div设置样式 */
-		.footer>.footer_bottom>.bottom_1{
-			/* background-color: teal; */
-			display: flex;
-			justify-content: space-around;
-			align-items: center;
-			width: 100%;
-			height: 50%;
-			border-bottom: 1px solid #aaa;
-		}
-		/* 底部黑色部分上半部分小的div设置样式 */
-		.footer>.footer_bottom>.bottom_1>div{
-			/* background-color: pink; */
-			width: 200px;
-			height: 50px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-		/* 黑色部分圆圈样式 */
-		.footer>.footer_bottom>.bottom_1>div>.circle{
+			padding: 0 17px;
 			box-sizing: border-box;
-			width: 50px;
-			height: 50px;
-			border: 3px solid #fff;
-			border-radius: 50%;
+			margin-bottom: 30px;
 		}
-		/* 黑色部分圆圈后的字体样式 */
-		.footer>.footer_bottom>.bottom_1>div>.title{
+		.footer_bottom_top>li{
+			float: left;
 			font-size: 18px;
-			font-weight: 300;
-			color: #fff;
-			margin-left: 10px;
-		}
-		/* 尾部第一行链接li样式 */
-		.footer .bottom_2 li{
-			list-style: none;
-			cursor: pointer;
-			float: left;
-			font-size: 12px;
-			color: #999;
-		}
-		/* 鼠标悬浮变色 */
-		.footer .bottom_2 li:hover{
+			line-height: 51px;
 			color: #fff;
 		}
-		/* 设置第一行居中显示 */
-		.footer .bottom_2>div>ul{
-			height: 20px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-		/* 尾部第一行li后面添加样式 */
-		.footer .bottom_2 li::after{
-			content: ' | ';
-		}
-		.footer .bottom_2 li:last-child::after{
-			content: '';
-		}
-		/* 尾部第2-4行样式 */
-		.footer .bottom_2 a{
-			cursor: pointer;
-			float: left;
-			font-size: 12px;
-			color: #999;
-			text-decoration: none;
-		}
-		.footer .bottom_2 a:hover{
+		.footer_bottom_top>li:nth-child(2)>a{
 			color: #fff;
 		}
-		.footer .bottom_2 p{
-			cursor: text;
-			float: left;
-			font-size: 12px;
-			color: #999;
-		}
-		/* 尾部2-4行居中显示 */
-		.footer .bottom_2>.a{
-			height: 50px;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
-		/* 第二部分内容img布局 */
-		.content_two>div>.image{
-			height: 600px;
-			width: 100%;
-			margin-top: 80px;
-			/* background-color: coral; */
-
-		}
-		/* 内容部分第二部分左部分布局 */
-		.content_two>div>.image>.left{
-			float: left;
-			height: 533px;
-			width: 390px;
-			background-color: #fff;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-		}
-		/* 内容部分第二部分右部分布局 */
-		.content_two>div>.image>.right{
-			height: 540px;
-			width: calc(100% - 390px);
-			float: right;
-		}
-		/* 内容部分第二部分右部分六个图片布局 */
-		.content_two>div>.image>.right>div{
-			height: 266px;
-			width: 225px;			
-			float: left;
-			background-color: #fff;
-			margin: 1px;
-			flex-direction: column;
-			align-items: center;
-			text-align: center;
-		}
-		/* 内容第三部分图片整体div设置 */
-		.content_three>div>.img{
-			width: 100%;
-			height: 400px;
-			position: relative;
-    		top: 90px;
-    		display: flex;
-    		justify-content: space-between;
-    		background-color: #fff;
-		}
-		/* 内容第三部分图片左设置 */
-		.content_three>div>.img>.left{
-			height: 100%;
-			width: 230px;
-		}
-		/* 内容第三部分图片中设置 */
-		.content_three>div>.img>.center{
-			width: 600px;
-			height: 100%;
-		}
-		/* 内容第三部分图片右设置 */
-		.content_three>div>.img>.right{
-			height: 100%;
-			width: 200px;
-			/* background-color: coral; */
-		}
-		/* 内容第三部分图片标题栏目设置 */
-		.content_three>div>.img .title{
-			font-size: 16px;
-			float: left;
-			line-height: 70px;
-
-		}
-		/* 内容第三部分图片小字栏目设置 */
-		.content_three>div>.img .little{
-			font-size: 12px;
-			float: right;
-			cursor: pointer;
-			line-height: 70px;
-			margin-right: 20px;
-		}
-		/* 内容第三部分中间部分下div设置格式 */
-		.content_three>div>.img>.center>.img>div{
-			height: 130px;
-			width: 46%;
-			/* background-color: red; */
-			margin: 6px;
-			display: inline-block;
-			/* display: flex inline-block; */
-			align-items: center;
-			justify-content: center;
-			margin-top: 20px;
-		}
-		/* 内容第三部分中间部分下div设置img格式 */
-		.content_three>div>.img>.center>.img>div>img{
-			height: 130px;
-			width: 130px;
-			float: left;
-			border: 0px;
-		}
-		/* 内容第三部分中间部分下div设置img信息介绍格式 */
-		.content_three>div>.img>.center>.img>div .message1{
-			font-size: 14px;
-			line-height: 20px;
-			color: #333;
-			margin-left: 5px;
-		}
-		/* 内容第三部分中间部分下div设置img显示信息格式 */
-		.content_three>div>.img>.center>.img>div .xianshi{
-			font-size: 14px;
-			margin-left: 5px;
-			color: #BE4141;
-		}
-		/* 内容第三部分中间部分下div设置img价格信息格式 */
-		.content_three>div>.img>.center>.img>div .price{
-			font-size: 20px;
-			color: #BE4141;
-			font-weight: 700;
-		}
-		/* 内容第三部分中间部分下div设置img价格信息格式 */
-		.content_three>div>.img>.center>.img>div .￥{
-			font-size: 12px;
-			color: #BE4141;
-		}
-		/* 内容第三部分中间部分下div设置img价格删除信息格式 */
-		.content_three>div>.img>.center>.img>div .price_delete{
-			color: #A4A4A4;
-			font-size: 14px;
-			text-decoration: line-through;
-			margin-left: 5px;
-		}
-		/* 内容第三部分中间部分下div设置img立即抢购格式 */
-		.content_three>div>.img>.center>.img>div a{
-			width: 90px;
-			height: 28px;
-			font-size: 12px;
-			background-color: #BB3343;
-			color: #fff;
-			text-decoration: none;
-			display: block;
-			line-height: 28px;
-			text-align: center;
-			margin-left: 10px;
-		}
-		/* 第三部分内容右部分两个div设置 */
-		.content_three>div>.img>.right>div{
-			height: 50%;
-			width: 100%;
-			margin: 0px;
-		}
-		.content_three>div>.img>.right>div>.one{
-			height: 50px;
-			width: 200px;
-			/* background-color: red; */
-			clear: both;
-			margin-bottom: 20px;
-		}
-		.content_three>div>.img>.right>div>.one>img{
-			height: 50px;
+		.footer_bottom_top>li:first-child>i{
+			background-image: url('./images/footer.webp');
+			background-position: 0 -134px;
 			width: 50px;
-		}
-		.content_three>div>.img>.right>div>.one>img+div{
 			height: 50px;
-			width: calc(100% - 60px);
-			/* background-color: red; */
-			float: right;
-			margin-left: 10px;
-		}
-		.content_three>div>.img>.right>div>.one>img+div>a{
-			font-size: 14px;
-			text-decoration: none;
-			width: 150px;
-			color: #333;
-			/* width: 100%; */
-			float: left;
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow:ellipsis;
-		}
-		.content_three>div>.img>.right>div>.one>img+div>span{
-			font-size: 14px;
-			color: #be4141;
 			display: inline-block;
-			margin-top: 10px;
+			margin-right: 17px;
+			float: left;
 		}
-		.content_three>div>.img>.right>div>.one>img+div>i{
+		.footer_bottom_top>li:nth-child(2)>a>i{
+			background-image: url('./images/footer.webp');
+			background-position: 0 -368px;
+			width: 50px;
+			height: 51px;
+			display: inline-block;
+			margin-right: 17px;
+			float: left;
+		}
+		.footer_bottom_top>li:nth-child(3)>i{
+			background-image: url('./images/footer.webp');
+			background-position: 0 0;
+			width: 50px;
+			height: 51px;
+			display: inline-block;
+			margin-right: 17px;
+			float: left;
+		}
+		.footer_bottom_top>li:nth-child(4)>i{
+			background-image: url('./images/footer.webp');
+			background-position: 0 -194px;
+			width: 50px;
+			height: 50px;
+			display: inline-block;
+			margin-right: 17px;
+			float: left;
+		}
+		.footer_bottom_bottom{
+			border-top: 1px solid #4f4f4f;
+			padding-top: 27px;
+		}
+		.footer_bottom_bottom>p{
+			color: #999;
+			font-size: 12px;
+			margin-bottom: 11px;
+			text-align: center;
+		}
+		.footer_bottom_bottom>p>a{
+			color: #999;
+			margin-right: 10px;
+		}
+		.footer_bottom_bottom>p:first-child>a{
+			color: #999;
+			margin: 0 10px;
+		}
+		.footer_bottom_bottom>p>a:hover{
+			color: #fff;
+		}
+		.footer_bottom_bottom>p:last-child>a>img{
+			width: 23px;
+			height: 25px;
+			margin-top: -5px;
+			vertical-align: top;
+		}
+
+
+
+
+		.family_life_button,.Clothing_button,.Food_drink_button,.clean_button,.Mother_child_button,.motion_button,.Digital_button,.Global_button{
+			position: relative;
+		}
+		.family_life_button:hover>.family_life_class{
+			display: block;
+		}
+		.family_life_button>.family_life_class{
+			width: 1202px;
+			height: 405px;
+			background-color: #fff;
+			position: absolute;
+			z-index: 2;
+			display: block;
+			left: -110px;
+			padding: 14px 20px 20px 20px;
+			border: 1px solid #eee;
+			font-size: 14px;
+			display: none;
+		}
+		.Clothing_button:hover>.Clothing_class{
+			display: block;
+		}
+		.Clothing_button>.Clothing_class{
+			width: 1350px;
+			height: 513px;
+			background-color: #fff;
+			position: absolute;
+			z-index: 2;
+			display: block;
+			left: -296px;
+			padding: 14px 20px 20px 20px;
+			border: 1px solid #eee;
+			font-size: 14px;
+			display: none;
+		}
+		.Food_drink_button:hover>.Food_drink_class{
+			display: block;
+		}
+		.Food_drink_button>.Food_drink_class{
+			width: 1202px;
+			height: 351px;
+			background-color: #fff;
+			position: absolute;
+			z-index: 2;
+			display: block;
+			left: -330px;
+			padding: 14px 20px 20px 20px;
+			border: 1px solid #eee;
+			font-size: 14px;
+			display: none;
+		}
+		.clean_button:hover>.clean_class{
+			display: block;
+		}
+		.clean_button>.clean_class{
+			width: 1202px;
+			height: 351px;
+			background-color: #fff;
+			position: absolute;
+			z-index: 2;
+			display: block;
+			left: -440px;
+			padding: 14px 20px 20px 20px;
+			border: 1px solid #eee;
+			font-size: 14px;
+			display: none;
+		}
+		.Mother_child_button:hover>.Mother_child_class{
+			display: block;
+		}
+		.Mother_child_button>.Mother_child_class{
+			width: 1202px;
+			height: 405px;
+			background-color: #fff;
+			position: absolute;
+			z-index: 2;
+			display: block;
+			left: -550px;
+			padding: 14px 20px 20px 20px;
+			border: 1px solid #eee;
+			font-size: 14px;
+			display: none;
+		}
+		.motion_button:hover>.motion_class{
+			display: block;
+		}
+		.motion_button>.motion_class{
+			width: 1054px;
+			height: 405px;
+			background-color: #fff;
+			position: absolute;
+			z-index: 2;
+			display: block;
+			left: -580px;
+			padding: 14px 20px 20px 20px;
+			border: 1px solid #eee;
+			font-size: 14px;
+			display: none;
+		}
+		.Digital_button:hover>.Digital_class{
+			display: block;
+		}
+		.Digital_button>.Digital_class{
+			width: 1202px;
+			height: 297px;
+			background-color: #fff;
+			position: absolute;
+			z-index: 2;
+			display: block;
+			left: -770px;
+			padding: 14px 20px 20px 20px;
+			border: 1px solid #eee;
+			font-size: 14px;
+			display: none;
+		}
+		.Global_button:hover>.Global_class{
+			display: block;
+		}
+		.Global_button>.Global_class{
+			width: 1054px;
+			height: 297px;
+			background-color: #fff;
+			position: absolute;
+			z-index: 2;
+			display: block;
+			left: -800px;
+			padding: 14px 20px 20px 20px;
+			border: 1px solid #eee;
+			font-size: 14px;
+			display: none;
+		}
+
+
+		.class_item{
+			width: 124px;
+			margin-right: 24px;
+			float: left;
+			overflow: hidden;
+		}
+		.class_item:last-child{
+			margin-right: 0;
+		}
+		.item_name{
+			width: 124px;
+			max-width: 124px;
+			margin-bottom: 10px;
+			font-size: 16px;
+			font-weight: 700;
+			line-height: 36px;
+			border-bottom: 1px solid #ddd;
+			display: inline-block;
+		}
+		.item_content{
+			width: 124px;
+			height: 50px;
+			margin-bottom: 4px;
+			float: left;
+			overflow: hidden;
+			display: flex;
+			align-items: center;
+		}
+		.item_content>img{
+			width: 50px;
+			height: 50px;
+			float: left;
+		}
+		.item_content>span{
+			display: inline-block;
+			width: 70px;
+			max-width: 70px;
+			max-height: 48px;
+			float: left;
+			line-height: 1.2;
+			margin-left: 4px;
+			font-weight: 500;
+			color: #333;
+			overflow: hidden;
+			vertical-align: middle;
+		}
+		.item_content:hover>span{
 			color: #b4a078;
-			height: 24px;
-			width: 24px;
-			float: right; 
-			margin-top: 8px;
 		}
+
 	</style>
 </head>
 <body>
 	<div class="main">
 		<div class="top">
-			<!-- 顶部左上角喇叭和喇叭文本 -->
-			<div class="top_laba">
-				<i class="iconfont icon-horn"></i>
-				<p>关于就修改《吃货任务-奖品发放活动规则》公开征求意见的公告</p>
-			</div>
-			<!-- 顶部右上角标签栏目 -->
-			<div class="top_list">
-				<ul>
-					<li>登录/注册</li> 
-					<li>我的订单</li>
-					<li>会员</li>
-					<li>甄选家</li>
-					<li>企业采购
-						<i class="iconfont icon-xiajiantou"></i>
-						<div>
-							<a>企业购</a>
-							<a>礼品卡</a>
-							<a>联系我们</a>
-						</div>
-					</li>
-					<li>客户服务
-						<!-- 导入下箭头的iconfont -->
-						<i class="iconfont icon-xiajiantou"></i>
-						<div>
-							<a>在线客服</a>
-							<a>帮助中心</a>
-							<a>商务合作</a>
-							<a>开放平台</a>
-						</div>
-					</li>
-					<li>
-						<!-- 导入下箭头的iconfont -->
-						<i class="iconfont icon-phone"></i>APP</li>
-				</ul>
-			</div>
-		</div>
-		<div class="header">
-			<div class="header_top" style="display: flex;align-items: center;">
-				<!-- 网易严选图片 -->
-				<img src="./images/网易严选.png" style="width: 210px;height: 65px;">
-				<!-- 搜索框以及搜索框以下内容 -->
-				<div class="search">
-					<!-- 搜索框内容 -->
-					<div class="search_search" style="display: flex;align-items: center;justify-content: center;background-color: white;">
-						<i class="iconfont icon-sousuosearch82" style="font-size: 30px;"></i>
-						<input type="text" style="height: 100%;width: 400px;border: 0px;">
-						<div style="background-color: #cc9756;height: 100%;width:90px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;text-align: center;line-height: 40px;font-size: 18px;letter-spacing: 2px;color: #fff;font-weight: 500;cursor: pointer;">搜索</div>
-					</div>
-					<!-- 搜索框以下文本内容 -->
-					<div class="search_text">
-						<a href="">&nbsp;筷子节美食3件85折&nbsp;</a>&nbsp;|&nbsp;
-						<a href="">&nbsp;防霉除湿&nbsp;</a>&nbsp;|&nbsp;
-						<a href="">&nbsp;快递绿色回收 倡议书</a>
-					</div>
+			<div class="top_content">
+				<div class="ad">
+					<img src="./images/ad.gif">
+					<ul>
+						<li><a href="">关于新疆部分地区寄递管控通知</a></li>
+						<li><a href="">关于包邮政策变更的说明</a></li>
+						<li><a href="">关于响应国家全面推广电子普通发票的公告</a></li>
+						<li><a href="">关于新疆部分地区寄递管控通知</a></li>
+					</ul>
 				</div>
-				<!-- 头部右上角购物车标识 -->
-				<div class="shop">
-					<i class="iconfont icon-gouwuche"></i>&nbsp;
-					<p>购物车</p>
-					<i style="width: 20px;height: 20px;border-radius: 50%;background-color: red;color: #fff;text-align: center;font-family: 微软雅黑;">0</i>
-				</div>
-			</div>
-			<div class="header_bottom">
-				<ul>
-					<li>首页</li>
-					<li>居家生活
-						<div>
-							1111
-						</div>
-					</li>
-					<li>服饰鞋包
-						<div>
-							111111
-						</div>
-					</li>
-					<li>美食酒水
-						<div>
-							
-						</div>
-					</li>
-					<li>个护清洁
-						<div>
-							
-						</div>
-					</li>
-					<li>母婴亲子
-						<div>
-							
-						</div>
-					</li>
-					<li>运动旅行
-						<div>
-							
-						</div>
-					</li>
-					<li>数码家电
-						<div>
-							
-						</div>
-					</li>
-					<li>严选全球
-						<div>
-							
-						</div>
-					</li>
-					<li>为你严选</li>
-					<li>众筹</li>
-				</ul>
-			</div>
-		</div>
-		<div class="image">
-			<div>		
-				<img src="https://yanxuan.nosdn.127.net/cc79c044a98678e3ad03594ed0f7ada1.jpg?type=webp&imageView&quality=95&thumbnail=1920x420">
-				<img src="https://yanxuan.nosdn.127.net/01dd02764fdd2bdace16f441e0da5c45.jpg?type=webp&imageView&quality=95&thumbnail=1920x420">
-				<img src="https://yanxuan.nosdn.127.net/5bd95fa4a80f897a40f709ad37e9a65a.jpg?type=webp&imageView&quality=95&thumbnail=1920x420">
-				<img src="https://yanxuan.nosdn.127.net/5fb903900e7149956d5b2a8231f0e9a5.png?type=webp&imageView&quality=95&thumbnail=1920x420">	
-				<img src="https://yanxuan.nosdn.127.net/dd0916482a349ba9b48c1ef4060b6454.jpg?type=webp&imageView&quality=95&thumbnail=1920x420">
-				<img src="http://yanxuan-miaobi.nos-jd.163yun.com/3989758_1_1_web_67fdcbb1c07fb5a5c6bfc5e1fa4861f4.jpg?type=webp&imageView&quality=95&thumbnail=1920x420">
-			</div>
-		</div>
-		<div class="content">
-			<div class="content_one">
-				<div>
-					<div class="message">
-						<div class="title">新品首发</div>
-						<div class="little">为你寻觅世间好物</div>
-						<a class="blue" href="http://you.163.com/item/newItem?_stat_area=newItem_link&_stat_referer=index">更多新品&nbsp;&gt;</a>
-					</div>
-					<div class="image">
-						<ul>
-							<li>
-								<img src="https://yanxuan-item.nosdn.127.net/4cf591db7d08ef4787508aff0959189d.png?type=webp&quality=95&thumbnail=265x265&imageView">
-								<div class="manjian">
-									<p>每满99减15券</p>
-								</div>
-								<div class="product">
-									<a href="">一颗洗8件 日本超浓缩48小时抗菌消臭洗衣液</a>
-									<div class="price">￥59</div>
-								</div>
-							</li>
-							<li>
-								<img src="https://yanxuan-item.nosdn.127.net/a82912add6abd8a78b34ace57e8ef2ce.png?type=webp&quality=95&thumbnail=265x265&imageView">
-								<div class="zhizao">
-									<p>杭州制造</p>
-								</div>
-								<div class="product">
-									<a href="">切丝擦丝切蒜辅食 家用食物多功能料理机</a>
-									<div class="price">￥29.9</div>
-								</div>
-							</li>
-							<li>
-								<img src="https://yanxuan-item.nosdn.127.net/cd8e1e49743f2f2a0067ebb4bc0e58a7.png?type=webp&quality=95&thumbnail=265x265&imageView">
-								<div class="manjian">
-									<p>每满99减15券</p>
-								</div>
-								<div class="product">
-									<a href="">万古不易，锁味增鲜 日本万古烧饭釜0.5L</a>
-									<div class="price">￥149</div>
-								</div>
-							</li>
-							<li>
-								<img src="https://yanxuan-item.nosdn.127.net/3af7fadcc544ee7a0ff40990a70cae9e.png?type=webp&quality=95&thumbnail=265x265&imageView">
-								<div class="manjian">
-									<p>特价</p>
-								</div>
-								<div class="product">
-									<a href="">女式可机洗天丝平底鞋</a>
-									<div class="price">￥134
-										<div class="price_delete">￥149</div>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="content_two">
-				<div>
-					<div class="message">
-						<div class="title">人气推荐</div>
-						<a class="blue" href="http://you.163.com/item/recommend?_stat_area=pop_more&_stat_referer=index">更多推荐&nbsp;&gt;</a>
-					</div>
-					<div class="image">
-						<div class="left">
-							<img src="https://yanxuan-item.nosdn.127.net/3334651215305fdf04d7f1da2b0a1a0b.png?type=webp&quality=95&thumbnail=320x320&imageView">
-							<div class="manjian">
-								<p>换购</p>&nbsp;&nbsp;
-								<p>每满150减20券</p>
-							</div>
-							<div class="product">
-								<a href="" style="font-size: 18px;width: 248px;">可爱健康不要胖，全价成猫粮 1.8千克</a>
-								<div class="price" style="color: #d4282d;font-size:18px;">￥99</div>
-							</div>
-						</div>
-						<div class="right">
-							<div>
-								<img src="https://yanxuan-item.nosdn.127.net/2c0147161faaa160cf10b6770f1e290d.png?type=webp&quality=95&thumbnail=180y180&imageView">
-								<div class="manjian">
-									<p>每满99减15券</p>
-								</div>
-								<div class="product">
-									<a href="">清新英国梨香 强力去污酵素洗衣液3kg/1kg</a>
-									<div class="price">￥49.9</div>
-								</div>
-							</div>
-							<div>
-								<img src="https://yanxuan-item.nosdn.127.net/073f16bf0c7ad8634c3abb7636e063c2.png?type=webp&quality=95&thumbnail=180y180&imageView">
-								<div class="manjian">
-									
-								</div>
-								<div class="product">
-									<a href="">轻弹云朵居家拖鞋</a>
-									<div class="price">￥9.9</div>
-								</div>
-							</div>
-							<div>
-								<img src="https://yanxuan-item.nosdn.127.net/8b4f2e0d2e2ed5202300ec0afe405317.png?type=webp&quality=95&thumbnail=180y180&imageView">
-								<div class="manjian">
-									<div class="zhizao" style="display: inline-block">
-										<p>宁波制造</p>
-									</div>
-									<p>每满99减15券</p>
-								</div>
-								<div class="product">
-									<a href="">【丁磊直播款】男式精梳棉圆领短袖T恤衫</a>
-									<div class="price">￥49</div>
-								</div>
-							</div>
-							<div>
-								<img src="https://yanxuan-item.nosdn.127.net/22cfd602403ca6a026a439e08e3e3127.png?type=webp&quality=95&thumbnail=180y180&imageView">
-								<div class="manjian">
-									<p>换购</p>&nbsp;&nbsp;
-									<p>每满99减15券</p>
-								</div>
-								<div class="product">
-									<a href="">远优于欧盟标准，纯牛奶 250 毫升*24盒</a>
-									<div class="price">￥88</div>
-								</div>
-							</div>
-							<div>
-								<img src="https://yanxuan-item.nosdn.127.net/da0321f5813855f287c274e1d8a7cf9f.png?type=webp&quality=95&thumbnail=180y180&imageView">
-								<div class="manjian">
-									<div class="zhizao" style="display: inline-block">
-										<p>浙江制造</p>
-									</div>
-									<p>每满99减15券</p>
-								</div>
-								<div class="product">
-									<a href="">【限量抢购中】一次性医用级三层口罩</a>
-									<div class="price">￥20
-										<div class="price_delete">￥139</div>
-									</div>
-									
-								</div>
-							</div>
-							<div>
-								<img src="https://yanxuan-item.nosdn.127.net/488a81259dec9371232b37d133e1bbb8.png?type=webp&quality=95&thumbnail=180y180&imageView">
-								<div class="manjian">
-									<p>新人特价</p>
-								</div>
-								<div class="product">
-									<a href="">告别啃食尴尬，秘制无骨凤爪 108克</a>
-									<div class="price">￥13
-										<div class="price_delete">￥22</div>
-									</div>
-								</div>
-							</div>
+				<div class="user">
+					<div class="login">登录/注册</div>
+					<div><a href="">我的订单</a></div>
+					<div><a href="">会员</a></div>
+					<div><a href="">甄选家</a></div>
+					<div>
+						<a href="">
+							企业采购<i></i>
+						</a>
+						<div class="caigou">
+							<a href="">企业购</a>
+							<a href="">礼品卡</a>
+							<a href="">联系我们</a>
 						</div>
 					</div>
-				</div>
-			</div>
-			<div class="content_three">
-				<div>
-					<div class="message">
-						<div class="title">限时购</div>
-						<a class="blue" href="http://you.163.com/flashSale/index?_stat_area=mod_limit_more&_stat_referer=index">更多抢购&nbsp;&gt;</a>
+					<div>
+						<a href="">
+							客户服务<i></i>
+						</a>
+						<div class="service">
+							<a href="">在线客服</a>
+							<a href="">帮助中心</a>
+							<a href="">商务合作</a>
+							<a href="">开放平台</a>
+						</div>
 					</div>
-					<div class="img">
-						<div class="left">
-							<img src="https://yanxuan.nosdn.127.net/4d2ea84d9b30fe4d4a0cdac7fdd2dddc.jpg?type=webp&imageView&quality=95&thumbnail=224x376" style="height: 100%;width: 100%;">
-						</div>
-						<div class="center">
-							<div class="top" style="height: 70px;width: 100%;">
-								<p class="title">今日特价</p>
-								<p class="little">查看全部&nbsp;&gt;</p>
-							</div>
-							<div class="img" style="height: calc(100% - 70px);width: 100%;">
-								<div>
-									<img src="https://yanxuan-item.nosdn.127.net/22cfd602403ca6a026a439e08e3e3127.png?type=webp&quality=95&thumbnail=130x130&imageView">
-									
-									<div style="height: 100%;width: 146px;display: inline-block;float: left;">
-										<p class="message1">远优于欧盟标准，纯牛奶 250 毫升*24盒</p>
-										<span class="xianshi">限时价</span>
-										<span class="￥">￥</span>
-										<span class="price">88</span>
-										
-										<br><br><br>
-										<a href="">立即抢购</a>
-									</div>
-								</div>
-								<div>
-									<img src="https://yanxuan-item.nosdn.127.net/02b395ef8e9c2c2f4e8b5a530c24fafa.png?type=webp&quality=95&thumbnail=130x130&imageView">
-									<div style="height: 100%;width: 146px;display: inline-block;float: left;">
-										<p class="message1">只选当日鲜奶发酵，常温酸牛奶 200克*24盒</p>
-										<span class="xianshi">限时价</span>
-										<span class="￥">￥</span>
-										<span class="price">95</span>
-										<br><br><br>
-										<a href="">立即抢购</a>
-									</div>
-								</div>
-								<div>
-									<img src="https://yanxuan-item.nosdn.127.net/15f7d8d9535f72d91d8a9230432f784b.png?type=webp&quality=95&thumbnail=130x130&imageView">
-									<div style="height: 100%;width: 146px;display: inline-block;float: left;">
-										<p class="message1">“冬病夏治”三伏天艾灸，无烟便携艾灸盒</p>
-										<span class="xianshi">限时价</span>
-										<span class="￥">￥</span>
-										<span class="price">309</span>
-										<p class="price_delete">
-										￥399</p>
-										<br>
-										<a href="">立即抢购</a>
-									</div>
-								</div>
-								<div>
-									<img src="https://yanxuan-item.nosdn.127.net/45ec948ec31c4c4108ec9ece4edf9556.png?type=webp&quality=95&thumbnail=130x130&imageView">
-									<div style="height: 100%;width: 146px;display: inline-block;float: left;">
-										<p class="message1">法国年份雅文邑 700毫升</p>
-										<span class="xianshi">限时价</span>
-										<span class="￥">￥</span>
-										<span class="price">1528</span>
-										<p class="price_delete">
-										￥1598</p>
-										<br>
-										<a href="">立即抢购</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="right">
+					<div>
+						<a href="">
+							<i></i>APP
+						</a>
+						<div class="app">
 							<div>
-								<div class="top" style="height: 70px;width: 100%;">
-								<p class="title">量版囤货</p>
-								<p class="little">全部&nbsp;&gt;</p>
-								</div>
-								<div class="one">
-									<img src="https://yanxuan-item.nosdn.127.net/4fc7ea43e829af4ed31e09673f68db89.png?type=webp&quality=95&thumbnail=50x50&imageView">
-									<div>
-										<a href="" style="font-size: 14px">本色抑菌懒人抹布超值组</a>
-										<span>￥119</span>
-										<i class="iconfont icon-gouwuche"></i>
-									</div>
-								</div>
-								<div class="one">
-									<img src="https://yanxuan-item.nosdn.127.net/e22add3a371e8d06202a5c04109cf08b.png?type=webp&quality=95&thumbnail=50x50&imageView">
-									<div>
-										<a href="">三味演义冻干方便面 12盒</a>
-										<span>￥79</span>
-										<i class="iconfont icon-gouwuche"></i>
-									</div>
-								</div>
+								<img src="./images/下载.png">
 							</div>
-							<div>
-								<div class="top" style="height: 70px;width: 100%;">
-								<p class="title">今日买赠</p>
-								<p class="little">全部&nbsp;&gt;</p>
-								</div>
-								<div class="one">
-									<img src="https://yanxuan-item.nosdn.127.net/71f683fe9b19abd1b0f550a81797cd3c.png?type=webp&quality=95&thumbnail=50x50&imageView">
-									<div>
-										<a href="" style="font-size: 14px">【紫外线杀菌消毒】智能声控升降晾衣架</a>
-										<span>￥1499</span>
-										<i class="iconfont icon-gouwuche"></i>
-									</div>
-								</div>
-								<div class="one">
-									<img src="https://yanxuan-item.nosdn.127.net/a517938254c7d2f480827debf355127a.png?type=webp&quality=95&thumbnail=50x50&imageView">
-									<div>
-										<a href="">15分钟缓解颈椎酸痛，EMS颈椎按摩仪</a>
-										<span>￥199</span>
-										<i class="iconfont icon-gouwuche"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- <div></div>
-			<div></div>
-			<div></div> -->
-		</div>
-		<div class="footer">
-			<div class="footer_top">
-				<div class="footer_top1">
-					<div class="footer_content">
-						<div class="title">客户服务</div>
-						<div style="width:80px;height: 100px;float:left;border:1px solid #aaa; ">
-							<i class="iconfont icon-kefu" style="width: 100%;font-size: 24px;"></i>
-							<div>在线客服</div>
-						</div>
-						<div style="margin-left: 40px;width:80px;height: 100px;float:left;border:1px solid #aaa; ">
-							<i class="iconfont icon-dangqianhuihua" style="width: 100%;font-size: 24px;"></i>
-							<div>用户反馈</div>
-						</div>
-					</div>
-				</div>
-				<div class="footer_top2">
-					<div  class="footer_content"  style="width: 100%;justify-content: center;">
-						<div class="title" >何为严选</div>
-						<div style="width: 80%;margin-left: 10%;font-size: 13px;color: #333;">网易原创生活类电商品牌，秉承网易一贯的严谨态度，我们深入世界各地，从源头全程严格把控商品生产环节，力求帮消费者甄选到优质的商品</div>
-						<div style="display: flex;align-items: center;justify-content: center;">
-						<p style="font-size: 14px;color: #333;display: inline;">关注我们：</p>
-						<img src="./images/微博.png" style="width: 130px;height: 40px;;">
-						</div>
-					</div>
-				</div>
-				<div class="footer_top3">
-					<div  class="footer_content">
-						<div class="title">扫码下载严选APP</div>
-						<div  style="display: flex;align-items:center;justify-content: center;">
-							<img src="./images/二维码.png" style="width: 120px;height: 120px;">
-						</div>
-						<div  style="display: flex;align-items:center;justify-content: center;font-size: 12px;color: #b4a078;">
 							<p>下载领大额新人红包</p>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="footer_bottom">
-				<div class="bottom_1">
-					<div>
-						<div class="circle"></div>
-						<div class="title">网易自营电商</div>
+		</div>
+		<div class="header">
+			<div class="header-top">
+				<div class="header_top_logo"></div>
+				<div class="header_top_right">
+					<div class="header_top_search">
+						<div class="search_box">
+							<i></i>
+							<input type="search" name="" placeholder="好货集结，霸屏爆款都在这";>
+							<button>搜索</button>
+						</div>
+						<div class="search_could">
+							<a href="">超国标高品质</a>
+							<a href="">口罩专区</a>
+							<a href="">超值美食5折起</a>
+							<a href="">筷子除菌黑科技99元</a>
+						</div>
 					</div>
-					<div>
-						<div class="circle"></div>
-						<div class="title">30天无忧退换货</div>
-					</div>
-					<div>
-						<div class="circle"></div>
-						<div class="title">满99元免邮费</div>
-					</div>
-					<div>
-						<div class="circle"></div>
-						<div class="title">品质保证</div>
+					<div class="Cart">
+						<i></i>
+						<span>购物车</span>
+						<span>0</span>
 					</div>
 				</div>
-				<div class="bottom_2">
-					<div>
-						<ul>
-							<li>&nbsp;&nbsp;关于我们</li>
-							<li>&nbsp;&nbsp;帮助中心</li>
-							<li>&nbsp;&nbsp;售后服务</li>
-							<li>&nbsp;&nbsp;配送与验收</li>
-							<li>&nbsp;&nbsp;商务合作</li>
-							<li>&nbsp;&nbsp;企业采购</li>
-							<li>&nbsp;&nbsp;开放平台</li>
-							<li>&nbsp;&nbsp;搜索推荐</li>
-							<li>&nbsp;&nbsp;友情链接</li>
-							<li>&nbsp;&nbsp;廉正举报</li>
-						</ul>
+			</div>
+			<div class="header-bottom">
+				<ul>
+					<li><a href="">首页</a></li>
+					<li class="family_life_button"><a href="">居家生活</a>
+						<div class="family_life_class">
+							<div class="class_item">
+								<div class="item_name">口碑好物</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/0dd4db7175684809f98db4a172568c22.jpg?quality=95&type=webp&imageView" title="口碑好物">
+										<span>口碑好物</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/29e0b7d20a31fee3b6d9605831c26955.jpg?quality=95&type=webp&imageView" title="抑菌防螨">
+										<span>抑菌防螨</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/13d2bcc7cdccb92b2d7598c3e34c1458.jpg?quality=95&type=webp&imageView" title="春夏好物">
+										<span>春夏好物</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/5a165042f413da1d6a01a25de0a65952.png?quality=95&type=webp&imageView" title="主题床品">
+										<span>主题床品</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/bef3b6ec3a1d1b8ec3476ec2d5aa7a3a.png?quality=95&type=webp&imageView" title="北欧原木">
+										<span>北欧原木</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/e67bbd92ccf412e6c72caf426a6584e0.png?quality=95&type=webp&imageView" title="餐厨爆款清单">
+										<span>餐厨爆款清单</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">床上用品</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&type=webp&imageView" title="床品件套">
+										<span>床品件套</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/db9cd0d90269244c7167d18db493ec51.png?quality=95&type=webp&imageView" title="被枕盖毯">
+										<span>被枕盖毯</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/64d736388656705f5ba7a0ab8b3c0945.png?quality=95&type=webp&imageView" title="床垫床褥">
+										<span>床垫床褥</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">家具家装</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/e8e017d7b6d53abdbcfc2b4d9d464f7f.png?quality=95&type=webp&imageView" title="客餐厅家具">
+										<span>客餐厅家具</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/b96c03936142b1ccbbf57144a1bec8ef.png?quality=95&type=webp&imageView" title="卧室家具">
+										<span>卧室家具</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/51b15acb5aadf019452a1543b430912e.png?quality=95&type=webp&imageView" title="办公书房家具">
+										<span>办公书房家具</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/f44e2cb4a1250b1dbcb59aecd6de699b.png?quality=95&type=webp&imageView" title="小件家具">
+										<span>小件家具</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/1853975628f115fcfafed57403e02e14.png?quality=95&type=webp&imageView" title="灯具">
+										<span>灯具</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/4b99e46ac5ed04560d3afc799fe1a471.png?quality=95&type=webp&imageView" title="地毯窗帘">
+										<span>地毯窗帘</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">收纳日用</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/366989e4d730594e86fcd60b5ab19acc.png?quality=95&type=webp&imageView" title="收纳">
+										<span>收纳</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/0f79023e7f171c6e0414cd45e1b717fc.png?quality=95&type=webp&imageView" title="晾晒除味">
+										<span>晾晒除味</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/33386fcdceac29764fc9d9923150d665.png?quality=95&type=webp&imageView" title="毛巾浴巾">
+										<span>毛巾浴巾</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/959b248bb648a6737ef4eca56e2962f5.png?quality=95&type=webp&imageView" title="居家拖鞋">
+										<span>居家拖鞋</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/de6518ab55b39bf19610c2b301965f79.png?quality=95&type=webp&imageView" title="家庭医疗">
+										<span>家庭医疗</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">家居饰品</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/0da6f3d513e36c12eabad86a3e0607e7.png?quality=95&type=webp&imageView" title="抱枕靠垫">
+										<span>抱枕靠垫</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/3ab796d975584201ffe8f6c0123ba8bb.png?quality=95&type=webp&imageView" title="家饰">
+										<span>家饰</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/542fa9f88f195d5c738c30c72f7f865b.png?quality=95&type=webp&imageView" title="居家布艺">
+										<span>居家布艺</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">厨房用品</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/0ee675cc78ad0d4802bc4df7c3432194.png?quality=95&type=webp&imageView" title="锅具">
+										<span>锅具</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/95ad15a6b2cb7881d1fd687594aab419.png?quality=95&type=webp&imageView" title="餐厨配件">
+										<span>餐厨配件</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/6a77d9c34ad966dc90be25de51186f02.png?quality=95&type=webp&imageView" title="刀剪砧板">
+										<span>刀剪砧板</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">厨房用品</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/2dc44d85e10ad1f5b68bb0b5b1b4cbb5.png?quality=95&type=webp&imageView" title="餐具">
+										<span>餐具</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/45b50d5f8afbd6fdef97314647dcb7db.png?quality=95&type=webp&imageView" title="水具杯壶">
+										<span>水具杯壶</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/3102b963e7a3c74b9d2ae90e4380da65.png?quality=95&type=webp&imageView" title="茶咖酒具">
+										<span>茶咖酒具</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">宠物生活</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/b42a85ef15f856081ea9f49e5f6893e2.png?quality=95&type=webp&imageView" title="宠物食品">
+										<span>宠物食品</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/e766b09029ca00680d1e651b5cdc42bd.png?quality=95&type=webp&imageView" title="宠物用品">
+										<span>宠物用品</span>
+									</a>
+								</div>	
+							</div>
+						</div>
+					</li>
+					<li class="Clothing_button"><a href="">服饰鞋包</a>
+						<div class="Clothing_class">
+							<div class="class_item">
+								<div class="item_name">当季热销</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/2e91f2abbd1b8974cb4bae70a1f15c51.png?quality=95&type=webp&imageView" title="好物上新">
+										<span>好物上新</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/e6703123fb8aecd1a60804f410c888b7.png?quality=95&type=webp&imageView" title="热销爆款">
+										<span>热销爆款</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/343dc5f980da04776a110959f4670375.png?quality=95&type=webp&imageView" title="抄底特惠">
+										<span>抄底特惠</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">男装</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/38f042e4b54dd3e0ec49edd50d08d372.png?quality=95&type=webp&imageView" title="男式T恤/POLO">
+										<span>男式T恤/POLO</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/49544dfaf63f3a932448032a66823230.png?quality=95&type=webp&imageView" title="男式衬衫">
+										<span>男式衬衫</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/37867446e19b574cbe50e3de25b9eec2.jpg?quality=95&type=webp&imageView" title="男式裤装">
+										<span>男式裤装</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/7b9ba338737b2e03cb13f70c18af5a26.png?quality=95&type=webp&imageView" title="男式牛仔">
+										<span>男式牛仔</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/6b4fa90e23805f1907f84a38e187c9b5.jpg?quality=95&type=webp&imageView" title="男式针织衫/卫衣">
+										<span>男式针织衫/卫衣</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/82e58bb46d5645f50bafbc53706df438.png?quality=95&type=webp&imageView" title="男式外套">
+										<span>男式外套</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">女装</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/b5b4364d02247f304888f0a730f0add6.png?quality=95&type=webp&imageView" title="女式T恤/POLO">
+										<span>女式T恤/POLO</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/0760a6de32ecde06b8bd741486318d42.png?quality=95&type=webp&imageView" title="女式裙装">
+										<span>女式裙装</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/75453de0177da9217b13f7fc0a2a8b87.png?quality=95&type=webp&imageView" title="女士半裙">
+										<span>女士半裙</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/ee07240b167d345b0409f570a25af5d4.png?quality=95&type=webp&imageView" title="女式衬衫">
+										<span>女式衬衫</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/3a888c7b83b54e01f9448407e5931d6c.png?quality=95&type=webp&imageView" title="女式裤装">
+										<span>女式裤装</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/02a5d2f3a01d7381ad0d26ef7429678b.png?quality=95&type=webp&imageView" title="女式牛仔">
+										<span>女式牛仔</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/c72f2269be1fb7bda8fc73eaa789f3f1.png?quality=95&type=webp&imageView" title="女式针织衫/卫衣">
+										<span>女式针织衫/卫衣</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/e45c2cf5b2da6d368a195a1816dcf18f.png?quality=95&type=webp&imageView" title="女式外套">
+										<span>女式外套</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">居家内衣</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/969ad4c29be41ed8da9de19a0ca56742.jpg?quality=95&type=webp&imageView" title="女式家居服">
+										<span>女式家居服</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/701ece70e2f4629343a5a08591182d96.png?quality=95&type=webp&imageView" title="女式内衣">
+										<span>女式内衣</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/32f5f825e97d3f09414dfd07f63369b9.png?quality=95&type=webp&imageView" title="女式文胸/套装">
+										<span>女式文胸/套装</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/ff747839a6651c8f8929e7e202a06c02.jpg?quality=95&type=webp&imageView" title="男式家居服">
+										<span>男式家居服</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/d8f1d00c7f972631c90a29a9c517a532.png?quality=95&type=webp&imageView" title="男式内衣">
+										<span>男式内衣</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/50453b504f6039ee80c46960e8435661.png?quality=95&type=webp&imageView" title="男式内裤">
+										<span>男式内裤</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/28f818a368f4a8ff98783ad10a9210de.png?quality=95&type=webp&imageView" title="女式内裤">
+										<span>女式内裤</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/7b069ad6cb4c8ac426c669ec1a47ef28.png?quality=95&type=webp&imageView" title="女袜/连裤袜">
+										<span>女袜/连裤袜</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">运动户外服</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/5fe68059c9dbde8167a7578305a260ea.png?quality=95&type=webp&imageView" title="男式运动T恤">
+										<span>男式运动T恤</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/4fe198d10ab9153a12b3dc289ef2b954.png?quality=95&type=webp&imageView" title="男式户外服装">
+										<span>男式户外服装</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/a65817044fd1b60b19c9387f6511fa5c.png?quality=95&type=webp&imageView" title="女式运动内衣/泳装">
+										<span>女式运动内衣/泳装</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/30a316abe4244a6d298a3bb7e952b87e.png?quality=95&type=webp&imageView" title="女式运动T恤">
+										<span>女式运动T恤</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/157c88fa1aad8b40235db81960e2d5e0.png?quality=95&type=webp&imageView" title="女式户外服装">
+										<span>女式户外服装</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/d961fba5c4b9604ecf021df6cc476ad1.png?quality=95&type=webp&imageView" title="女式运动外套/卫衣">
+										<span>女式运动外套/卫衣</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/43cb60be6b631a71a6ff070190afe7b0.png?quality=95&type=webp&imageView" title="男式运动裤装">
+										<span>男式运动裤装</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/37a6f2349c58ce68a88039dec2ce05dd.png?quality=95&type=webp&imageView" title="女式运动裤装">
+										<span>女式运动裤装</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">鞋靴</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/d8c15d2ba831799dde8393736fa5d738.png?quality=95&type=webp&imageView" title="男鞋">
+										<span>男鞋</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/3a22f227da7eb01c674ae32f7ecd5d08.png?quality=95&type=webp&imageView" title="女鞋">
+										<span>女鞋</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/7b06cf08aa32f431706c14ba518731b9.png?quality=95&type=webp&imageView" title="拖鞋">
+										<span>拖鞋</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/c08c6f32f0153152ab170e3fe09dcffb.png?quality=95&type=webp&imageView" title="鞋配">
+										<span>鞋配</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">箱包</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/7d0e798e1f9c0eefbe65d4e3bc9f08de.png?quality=95&type=webp&imageView" title="行李箱">
+										<span>行李箱</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/a9d683fd5c8bb112856a8118c68bd2aa.png?quality=95&type=webp&imageView" title="女士包袋">
+										<span>女士包袋</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/a16610a986926f9c06d8979417e7ef9f.png?quality=95&type=webp&imageView" title="男士包袋">
+										<span>男士包袋</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/2697a7254e57c34e71ee8ad53da8fcf7.png?quality=95&type=webp&imageView" title="钱包及小皮件">
+										<span>钱包及小皮件</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">首饰配件</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/a2529e9eb10c8739602d956a8ee65bb3.png?quality=95&type=webp&imageView" title="奢华珠宝">
+										<span>奢华珠宝</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/060c6ef3f4792813fe51d7b733e683f6.png?quality=95&type=webp&imageView" title="时尚饰品">
+										<span>时尚饰品</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/ee9a9ebfb25264393f38defafe8eacd4.png?quality=95&type=webp&imageView" title="围巾手套">
+										<span>围巾手套</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/b3004f1d3b3aa65ee7a50b0acb83b674.png?quality=95&type=webp&imageView" title="帽子发饰">
+										<span>帽子发饰</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/d165276ae33da8c277b6391191a26ad7.png?quality=95&type=webp&imageView" title="腰带腕表">
+										<span>腰带腕表</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/2c51cf2f8f745b5dea3000d73e103705.png?quality=95&type=webp&imageView" title="眼镜墨镜">
+										<span>眼镜墨镜</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">系列特辑</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/594e9fd46a11cde0663f36df070b4132.png?quality=95&type=webp&imageView" title="免烫系列">
+										<span>免烫系列</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/ea641bf5bede46a408c7a23c06611d26.png?quality=95&type=webp&imageView" title="棉麻系列">
+										<span>棉麻系列</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/15027c7fb366d8c55718a98f973eec2c.png?quality=95&type=webp&imageView" title="真丝系列">
+										<span>真丝系列</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/9cedd4c7ab3ec7220724faed12b9605a.png?quality=95&type=webp&imageView" title="莫代尔系列">
+										<span>莫代尔系列</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/1387c1a6c77a322711b7d67d3860e3f2.png?quality=95&type=webp&imageView" title="海洋环保">
+										<span>海洋环保</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="Food_drink_button"><a href="">美食酒水</a>
+						<div class="Food_drink_class">
+							<div class="class_item">
+								<div class="item_name">美食推荐</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/bb1fd61bf62a1802d351b11a0e03422e.png?quality=95&type=webp&imageView" title="夏日轻食">
+										<span>夏日轻食</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/727da6b6f5f02c22e46898f5b0db8a80.png?quality=95&type=webp&imageView" title="8月推荐">
+										<span>8月推荐</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/5506355debd606f67d8019fea1bb0e38.png?quality=95&type=webp&imageView" title="美味上新">
+										<span>美味上新</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/0dc649f638f26ec6655221d1bf3d52f3.png?quality=95&type=webp&imageView" title="员工精选">
+										<span>员工精选</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">休闲零食</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/f50b9a58a8492cfbf41116dc184a3e0f.png?quality=95&type=webp&imageView" title="饼干糕点">
+										<span>饼干糕点</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/3707fbabcfd22c4039a4cabc8e4c447a.png?quality=95&type=webp&imageView" title="小食糖巧">
+										<span>小食糖巧</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/027d936f4ce88772a57cb993772c82d9.png?quality=95&type=webp&imageView" title="肉类零食">
+										<span>肉类零食</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">坚果蜜饯</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/45d79ef37167b00ed61adb6df9385bb5.png?quality=95&type=webp&imageView" title="坚果炒货">
+										<span>坚果炒货</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/4a95d78400a419ed271a1617ae6ac100.png?quality=95&type=webp&imageView" title="蜜饯果干">
+										<span>蜜饯果干</span>
+									</a>
+								</div>	
+							</div>
+							<div class="class_item">
+								<div class="item_name">冲饮茗茶</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/a146e83a7f45a380d37ac4f369cce90d.png?quality=95&type=webp&imageView" title="冲调饮品">
+										<span>冲调饮品</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/5c2baff23798b055800e34c7c6b07bb3.png?quality=95&type=webp&imageView" title="传统茗茶">
+										<span>传统茗茶</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/8849d0272d485b473934f6e015579411.png?quality=95&type=webp&imageView" title="茗茶礼盒">
+										<span>茗茶礼盒</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/f78be48b2159a61b1afd6431e4deb30f.jpg?quality=95&type=webp&imageView" title="茶包花茶">
+										<span>茶包花茶</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">滋补保健</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/63784a476996a155a05e4f76ebb9bdb2.png?quality=95&type=webp&imageView" title="滋补食材">
+										<span>滋补食材</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/ce76432620bf86aec892eb17e8afb951.png?quality=95&type=webp&imageView" title="保健品">
+										<span>保健品</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">酒水饮料</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/06cf0a381b87e9b621e93ba7025114f4.png?quality=95&type=webp&imageView" title="乳品饮料">
+										<span>乳品饮料</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/fe26d5106a40b553ef695a10aadb7446.png?quality=95&type=webp&imageView" title="酒类">
+										<span>酒类</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/fd8b9071456a979d7e6d0d3865049f14.png?quality=95&type=webp&imageView" title="名酒馆">
+										<span>名酒馆</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">粮油调味</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/8578759aed2268f7aa8641273cac7cb3.png?quality=95&type=webp&imageView" title="米面粮油">
+										<span>米面粮油</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/492dfb836e9e5af22bb6b4a97990564f.png?quality=95&type=webp&imageView" title="方便食品">
+										<span>方便食品</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/2da5e4e680b646f61e3a33cf881ac646.png?quality=95&type=webp&imageView" title="南北干货">
+										<span>南北干货</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/5fae33a840870b487cc903535383bf97.png?quality=95&type=webp&imageView" title="调味酱菜">
+										<span>调味酱菜</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">生鲜特色</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/59fd0947f06e9ee27ee3bb962a418836.png?quality=95&type=webp&imageView" title="水果蔬菜">
+										<span>水果蔬菜</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/df37b8acd099cfb58abb3542d7cddd4f.png?quality=95&type=webp&imageView" title="肉蛋海鲜">
+										<span>肉蛋海鲜</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/09d2697543ba80d6fed900d3e0732f9d.png?quality=95&type=webp&imageView" title="冷冻冷藏">
+										<span>冷冻冷藏</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/79b904ccd106d3875a90d4430f2e8ad2.png?quality=95&type=webp&imageView" title="网易黑猪">
+										<span>网易黑猪</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/c11f5457dfb38e76f60100c87ecdf0cd.png?quality=95&type=webp&imageView" title="全球美食">
+										<span>全球美食</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="clean_button"><a href="">个护清洁</a>
+						<div class="clean_class">
+							<div class="class_item">
+								<div class="item_name">好物精选</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/8088ff3858f394f331e0961b4e9e4af2.png?quality=95&type=webp&imageView" title="爆款榜单">
+										<span>爆款榜单</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/56147dcc89632c5e7caf91e7ad6a3d99.jpg?quality=95&type=webp&imageView" title="新品尝鲜">
+										<span>新品尝鲜</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/da6b011a62d79bb104c60b9049b93c63.png?quality=95&type=webp&imageView" title="防疫必备">
+										<span>防疫必备</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">面部护理</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/7a8a1838b5a4324f38a707abb3091387.png?quality=95&type=webp&imageView" title="基础护肤">
+										<span>基础护肤</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/d5af03575d6924c7fcb274522546f982.png?quality=95&type=webp&imageView" title="卸妆洁面">
+										<span>卸妆洁面</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/11a98ccfcbe28e9f8b878c9869170396.png?quality=95&type=webp&imageView" title="护肤工具">
+										<span>护肤工具</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">个人护理</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/0f66a50bc777bc53a6e307e51f08577f.png?quality=95&type=webp&imageView" title="洗发护发">
+										<span>洗发护发</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/8ce91e11a8982da7dcec251daadd2594.png?quality=95&type=webp&imageView" title="身体护理">
+										<span>身体护理</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/5e5e9890754e6ea3897812e101ab5be1.png?quality=95&type=webp&imageView" title="口腔护理">
+										<span>口腔护理</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/e384b4af0d27c02f842a59815963daeb.png?quality=95&type=webp&imageView" title="女性护理">
+										<span>女性护理</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">彩妆香水</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/3beef4a3e59c727d6ceee8f98549294f.png?quality=95&type=webp&imageView" title="彩妆修容">
+										<span>彩妆修容</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/687a0659c771b495f58bd53ea55b76dd.png?quality=95&type=webp&imageView" title="香水香氛">
+										<span>香水香氛</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/ef881044553c8d020c52a6541a90d3a4.png?quality=95&type=webp&imageView" title="美妆工具">
+										<span>美妆工具</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">个护电器</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/e34159ec0b3feb133a0b816dde478a97.png?quality=95&type=webp&imageView" title="口腔护理电器">
+										<span>口腔护理电器</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/064a7f91e6b9bd5579a1a2121c6144be.png?quality=95&type=webp&imageView" title="面部护理电器">
+										<span>面部护理电器</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/a8d970a14135412a2ce47794a8ea6ede.png?quality=95&type=webp&imageView" title="头发护理电器">
+										<span>头发护理电器</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/5c9d4a6e98962108039e8c62f286663d.png?quality=95&type=webp&imageView" title="身体护理电器">
+										<span>身体护理电器</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">纸品清洁</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/07fef43b0d14882d6662233ab30dc588.png?quality=95&type=webp&imageView" title="纸品">
+										<span>纸品</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/985897ea31fdfc159e12696f4dbb4c13.png?quality=95&type=webp&imageView" title="湿巾">
+										<span>湿巾</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">家清卫浴</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/77caf67de51635a2bee8c8f8802967d4.png?quality=95&type=webp&imageView" title="衣物护理">
+										<span>衣物护理</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/718318c0d3b55d011fcb7c7c843902ce.png?quality=95&type=webp&imageView" title="家庭清洁">
+										<span>家庭清洁</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/55d927e337c1f6d394359e99ef72a621.png?quality=95&type=webp&imageView" title="餐厨清洁">
+										<span>餐厨清洁</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/949c5f8b077cf386ff9f1f18bec3408b.png?quality=95&type=webp&imageView" title="毛巾浴巾">
+										<span>毛巾浴巾</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/dfb6142de1bd2f59b251eb8f7c7ea2fb.png?quality=95&type=webp&imageView" title="浴室用品">
+										<span>浴室用品</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">成人用品</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/57cb3a6eb358bdb6140701f9f9d96006.png?quality=95&type=webp&imageView" title="水果蔬菜">
+										<span>避孕套</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/f33c65c50d88789dea8880852c9a6cc8.png?quality=95&type=webp&imageView" title="女用情趣">
+										<span>女用情趣</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/0474146a2b36044d66e4d3c97fbc4226.png?quality=95&type=webp&imageView" title="男用情趣">
+										<span>男用情趣</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/7606c68302a77f2bd1c858aae92c2b9f.png?quality=95&type=webp&imageView" title="润滑液">
+										<span>润滑液</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="Mother_child_button"><a href="">母婴亲子</a>
+						<div class="Mother_child_class">
+							<div class="class_item">
+								<div class="item_name">婴童精选</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/1af06d63764c885ebd0fe53ad465c52d.png?quality=95&type=webp&imageView" title="万千宝妈最爱">
+										<span>万千宝妈最爱</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/9fa81e0b983358e778d7021b5d3422a3.png?quality=95&type=webp&imageView" title="清爽一夏">
+										<span>清爽一夏</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/f819c5fa705a5b2774efc3c431d609ca.png?quality=95&type=webp&imageView" title="新品飙升榜">
+										<span>新品飙升榜</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/c678b4a59f93e06611a8419c32512064.png?quality=95&type=webp&imageView" title="低至3折">
+										<span>低至3折</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">洗护喂养</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/71414f781d12dc25b6d22383601d82b9.png?quality=95&type=webp&imageView" title="尿裤纸品">
+										<span>尿裤纸品</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/96d7152b82926466a914fbda3df21e03.png?quality=95&type=webp&imageView" title="洗护">
+										<span>洗护</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/114f8e59a95cc3b0010b4ad6f7a40a7f.png?quality=95&type=webp&imageView" title="喂养">
+										<span>喂养</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">婴童寝居</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/9681034b4dad38427208360a355120e4.png?quality=95&type=webp&imageView" title="婴童床品套件">
+										<span>婴童床品套件</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/90a70ba794790b1c1eeb1f3c24ead4f2.png?quality=95&type=webp&imageView" title="儿童家具收纳">
+										<span>儿童家具收纳</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/2ef00a7cebcf5bffa267ead05fa1bc40.png?quality=95&type=webp&imageView" title="婴童被枕芯类">
+										<span>婴童被枕芯类</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/08829c5f67fd2e5e65e7f3fa437165d3.png?quality=95&type=webp&imageView" title="抱被睡袋">
+										<span>抱被睡袋</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">玩具图书</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/ca1440f795e072358fd692205668b171.png?quality=95&type=webp&imageView" title="玩具">
+										<span>玩具</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/22536b9f59edcefd1485ea56225b03a9.png?quality=95&type=webp&imageView" title="文具">
+										<span>文具</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/022bd4c5c42bdbaa06c2366543e8ce29.png?quality=95&type=webp&imageView" title="图书">
+										<span>图书</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">童包出行</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/fe7aebe240add471b1fcf71244335970.png?quality=95&type=webp&imageView" title="推车/安全座椅">
+										<span>推车/安全座椅</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/e58d803fbcd673e2fd9887f2661f928e.png?quality=95&type=webp&imageView" title="童包/雨具/泳具">
+										<span>童包/雨具/泳具</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">童鞋</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/a8352685337c500341ff3126ff6f09ab.png?quality=95&type=webp&imageView" title="儿童鞋">
+										<span>儿童鞋</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/9a50280bb69e1c12f557f601cce1c480.png?quality=95&type=webp&imageView" title="学步鞋">
+										<span>学步鞋</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">童装</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/322ef1389b87b392b9c97780f723e22e.png?quality=95&type=webp&imageView" title="T恤/polo/衬衫">
+										<span>T恤/polo/衬衫</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/ed47b37c58ad59e4349e3c2fea39affe.png?quality=95&type=webp&imageView" title="外套/套装">
+										<span>外套/套装</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/87fe70bad1fe3371ac1b3cd6f22fef8c.png?quality=95&type=webp&imageView" title="裤子/裙装">
+										<span>裤子/裙装</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/5043f43cf53b9d83dbd9554b4de0d1c5.png?quality=95&type=webp&imageView" title="连体衣/礼盒">
+										<span>连体衣/礼盒</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/a2bbea7fb4e53fbf245f1348db6d8317.png?quality=95&type=webp&imageView" title="内衣/配搭">
+										<span>内衣/配搭</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/61d4ad2c049cf91d041cd0b1f7004bfd.png?quality=95&type=webp&imageView" title="卫衣/毛衫">
+										<span>卫衣/毛衫</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">孕产妈咪</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/fb702350a14f8e6b4d735bf70286cf5c.png?quality=95&type=webp&imageView" title="孕妈服饰">
+										<span>孕妈服饰</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/bfd8110f0f39fc4872e0205b504b7a95.png?quality=95&type=webp&imageView" title="妈咪用品">
+										<span>妈咪用品</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="motion_button"><a href="">运动旅游</a>
+						<div class="motion_class">
+							<div class="class_item">
+								<div class="item_name">当季精选</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/a6992c1173f61801c1452a5b45bef4f0.png?quality=95&type=webp&imageView" title="爆款指南">
+										<span>爆款指南</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/6d8d023a723c04e11751484c03b19050.png?quality=95&type=webp&imageView" title="推荐新品">
+										<span>推荐新品</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/e03ec88d75248ca4b19ea3e0b6f7d30f.png?quality=95&type=webp&imageView" title="减脂必备">
+										<span>减脂必备</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/00c9af758ac97fe8c2408ce503f6f7b7.png?quality=95&type=webp&imageView" title="乐享旅途">
+										<span>乐享旅途</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">旅行用品</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/e68e4100dd934328c999c434424c05ab.png?quality=95&type=webp&imageView" title="行李箱">
+										<span>行李箱</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/b3e60d464cd92a2fc125212fb72c7085.png?quality=95&type=webp&imageView" title="颈枕眼罩">
+										<span>颈枕眼罩</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/c0957f1ca49991008678bcfa69ddc9ca.png?quality=95&type=webp&imageView" title="雨具">
+										<span>雨具</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/aadf8e7e35b81c07675457c3be5ad17b.png?quality=95&type=webp&imageView" title="旅行收纳">
+										<span>旅行收纳</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/b50bf9004b1349f2b7207dfbdd15f961.png?quality=95&type=webp&imageView" title="出行用品">
+										<span>出行用品</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">运动健身</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/9b1b127ce92b55675d9b0b8ef6945fec.png?quality=95&type=webp&imageView" title="健身器械">
+										<span>健身器械</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/0e478fa1376e26559d11cae54fe11627.png?quality=95&type=webp&imageView" title="按摩护具">
+										<span>按摩护具</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/de5b7126965807b59468de582fbf1908.png?quality=95&type=webp&imageView" title="瑜伽美体">
+										<span>瑜伽美体</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">运动配件</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/02ec407e6dc51e49d7af326d8646bf16.png?quality=95&type=webp&imageView" title="运动配件">
+										<span>运动配件</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/fc49e5d6de57d93db072e8cc76728ac5.png?quality=95&type=webp&imageView" title="球类运动">
+										<span>球类运动</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/77fe8d15ad5170e1525bdc2f3e01adb9.png?quality=95&type=webp&imageView" title="游泳装备">
+										<span>游泳装备</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">男子运动</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/ff02f79a459f2664b93f194599889133.png?quality=95&type=webp&imageView" title="男式运动T恤">
+										<span>男式运动T恤</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/8473491c9943cbda074e9232fa6ec54e.png?quality=95&type=webp&imageView" title="男式运动外套/卫衣">
+										<span>男式运动外套/卫衣</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/180e99fddcaa81509fb49fbb6b3b018b.png?quality=95&type=webp&imageView" title="男式运动裤装">
+										<span>男式运动裤装</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/eadbe92447223fb000eb5a847ae14a59.png?quality=95&type=webp&imageView" title="男式户外服装">
+										<span>男式户外服装</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/66ca67f38f9f75d5d04d75dd382531ac.png?quality=95&type=webp&imageView" title="男式运动鞋">
+										<span>男式运动鞋</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">女子运动</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/83e7ef2cecef90510478c62ef1e7fecf.png?quality=95&type=webp&imageView" title="女式运动T恤">
+										<span>女式运动T恤</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/16224d689346b8d8265ecbbf37b40e98.png?quality=95&type=webp&imageView" title="女式运动外套/卫衣">
+										<span>女式运动外套/卫衣</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/71ac6657216ecaa4b18e2b1178e98cf5.png?quality=95&type=webp&imageView" title="女式运动裤装">
+										<span>女式运动裤装</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/2d471e49989cce43e1407b603900cb47.png?quality=95&type=webp&imageView" title="女式户外服装">
+										<span>女式户外服装</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/0e068c858bf3a3a7d29d1ed424152c6a.png?quality=95&type=webp&imageView" title="女式运动内衣/泳装">
+										<span>女式运动内衣/泳装</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/00e58ea330374df58310b77e7025b38a.png?quality=95&type=webp&imageView" title="女式运动鞋">
+										<span>女式运动鞋</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">户外露营</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/2a01855ae3ea657b4c4642bd232b87fd.png?quality=95&type=webp&imageView" title="露营野餐">
+										<span>露营野餐</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/18649cd00e65880eda8b519ced52dc06.png?quality=95&type=webp&imageView" title="徒步登山">
+										<span>徒步登山</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="Digital_button"><a href="">数码家电</a>
+						<div class="Digital_class">
+							<div class="class_item">
+								<div class="item_name">品质推荐</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/c315a2c0de3c5735b4af2160f1515027.png?quality=95&type=webp&imageView" title="甄选爆款">
+										<span>甄选爆款</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/956f5d7819a30b9aef6f5a2754f7f155.png?quality=95&type=webp&imageView" title="新品首发">
+										<span>新品首发</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/b5d0fee6750febce448e06eff9a6f4b9.png?quality=95&type=webp&imageView" title="应季推荐">
+										<span>应季推荐</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">生活电器</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/92141a5b18ecd564d433ef89726f81db.png?quality=95&type=webp&imageView" title="清洁电器">
+										<span>清洁电器</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/7c136a05336b35bf5b9bf3fb163bf18c.png?quality=95&type=webp&imageView" title="衣物护理">
+										<span>衣物护理</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/7f17282fcc06ebd4f1288b1b0c1e918b.png?quality=95&type=webp&imageView" title="两季电器">
+										<span>两季电器</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/3006611d351350cb65cbd8396340620e.png?quality=95&type=webp&imageView" title="空气调节">
+										<span>空气调节</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">按摩电器</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/f70b8d641f3364f3331dfb98ca7767d4.png?quality=95&type=webp&imageView" title="按摩器">
+										<span>按摩器</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/0f2871655d1b56010561fb5f681136d6.png?quality=95&type=webp&imageView" title="按摩椅">
+										<span>按摩椅</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">个护电器</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/058a02718af40a52e07ab42039ef4280.png?quality=95&type=webp&imageView" title="头发护理">
+										<span>头发护理</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/68981f451bef9c11e7c16d91f91bbe24.png?quality=95&type=webp&imageView" title="口腔护理">
+										<span>口腔护理</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/84fcb34bb189fcbfc6e2902a411ba258.png?quality=95&type=webp&imageView" title="面部护理">
+										<span>面部护理</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/44d8b9dd684dbd6a41e7203f8aa249b5.png?quality=95&type=webp&imageView" title="身体护理">
+										<span>身体护理</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">厨房电器</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/0fb36565c7bc7989697a45dbf0a3c1bd.png?quality=95&type=webp&imageView" title="厨房电器">
+										<span>厨房电器</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">智能生活</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/72952f24c6c48d4635fac31c7c09e6d9.png?quality=95&type=webp&imageView" title="智能家居">
+										<span>智能家居</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/7b2fe7140fa4348212aab7717e90f6d5.png?quality=95&type=webp&imageView" title="智能出行">
+										<span>智能出行</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">数码办公</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/0276d68f4b7a03bbd16675ada6e707ff.png?quality=95&type=webp&imageView" title="手机配件">
+										<span>手机配件</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/99b8f97b2e5449606fd558574aa15982.png?quality=95&type=webp&imageView" title="3C数码">
+										<span>3C数码</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/3f45fbcdac7e8532b6a1570e6d7fe171.png?quality=95&type=webp&imageView" title="车载用品">
+										<span>车载用品</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/801583d2f58274b13dc6a03daed1c3c9.png?quality=95&type=webp&imageView" title="办公文具">
+										<span>办公文具</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">影音娱乐</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/f5797ca77cfe413e7753ec69f9bd4bb1.png?quality=95&type=webp&imageView" title="影音娱乐">
+										<span>影音娱乐</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/da0ac345e98c04594b697b56ebc373a5.png?quality=95&type=webp&imageView" title="乐器">
+										<span>乐器</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="Global_button"><a href="">严选全球</a>
+						<div class="Global_class">
+							<div class="class_item">
+								<div class="item_name">夏日新品</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/9e2d58486a136fac0f49c0c59e824ecc.png?quality=95&type=webp&imageView" title="夏日新品">
+										<span>夏日新品</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/207225137609c2511a2ef865381a015b.png?quality=95&type=webp&imageView" title="应季防护">
+										<span>应季防护</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">居家餐厨</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/2544843a0b3b7f417b24797818cdbe7a.png?quality=95&type=webp&imageView" title="床品家纺">
+										<span>床品家纺</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/50ccbf04857e86cccf44d25da0577deb.png?quality=95&type=webp&imageView" title="餐厨用品">
+										<span>餐厨用品</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/861992846dc3333f0b1d747c4db2ce36.png?quality=95&type=webp&imageView" title="日用百货">
+										<span>日用百货</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/633bd8c054c5d9fe5a64897b884e7403.png?quality=95&type=webp&imageView" title="家清用品">
+										<span>家清用品</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">营养保健</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/9d77f8b20d9c6ebd5d35a63c51dd6b2e.png?quality=95&type=webp&imageView" title="营养保健">
+										<span>营养保健</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">美食酒水</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/8761ab65f29b6026b939475a898b569f.png?quality=95&type=webp&imageView" title="酒水饮料">
+										<span>酒水饮料</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/46d5c1f5e50ce79cef589c87c7d2ac90.png?quality=95&type=webp&imageView" title="休闲美食">
+										<span>休闲美食</span>
+									</a>
+								</div>	
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/bb2b9a5fd4f35864b087a3047412e99b.png?quality=95&type=webp&imageView" title="粮油速食">
+										<span>粮油速食</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">美妆洗护</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/719cc1290b99716fe736ede5a477c016.png?quality=95&type=webp&imageView" title="美妆个护">
+										<span>美妆个护</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/c0ad8ef6d7e71a2c90b2200ca8eb7780.png?quality=95&type=webp&imageView" title="口腔护理">
+										<span>口腔护理</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/00d79ce9acb7285b15f83c92940b557f.png?quality=95&type=webp&imageView" title="卫浴用品">
+										<span>卫浴用品</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">时尚珠宝</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/b26d34d052d9c780d695bf4b601bfffc.png?quality=95&type=webp&imageView" title="高级珠宝">
+										<span>高级珠宝</span>
+									</a>
+								</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/7daf27044470881e8839b46a262d958c.png?quality=95&type=webp&imageView" title="时尚配搭">
+										<span>时尚配搭</span>
+									</a>
+								</div>
+							</div>
+							<div class="class_item">
+								<div class="item_name">数码电器</div>
+								<div class="item_contents">
+									<a href="" target="_blank" class="item_content">
+										<img src="https://yanxuan.nosdn.127.net/b3839a1c64e03f5e838d65a23ec09337.png?quality=95&type=webp&imageView" title="数码电器">
+										<span>数码电器</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li><a href="">为你严选</a></li>
+					<li><a href="">众筹</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="image">
+		</div>
+		<div class="content">
+			<div class="NEW">
+				<div class="new_all">
+					<div class="name_top">
+						<h3 class="name">新品首发</h3>
+						<span>为你寻觅世间好物</span>
+						<div class="subCateList">
+							<a href="" class="more" target="_blank">更多新品 &gt;</a>
+						</div>
 					</div>
-					<div class="a">
-						<div>
-						<a href="">食品经营许可证：JY13301080111719&nbsp;&nbsp;</a>
-						<a href="">出版物经营许可证：新出发滨字第0132号&nbsp;&nbsp;</a>
-						<p>妙得ICP证号：ICP 证浙B2-20160106&nbsp;&nbsp;</p>
-						<a href="">浙杭食药监械经营备20171029号&nbsp;&nbsp;</a>
-						<a href="">营业执照&nbsp;&nbsp;</a>
-						<p>网易公司版权所有 © 1997-2020</p>
+					<button class="button_right"></button>
+					<button class="button_left"></button>
+					<div class="new_content">
+						<div class="Sesame">
+							<div class="img" title="守护你的发际线，黑芝麻丸 100克"></div>
+							<div class="text">
+								<div class="maked">
+									<span>新品限时购</span>
+								</div>
+								<div class="introduce">
+									<a href="" title="守护你的发际线，黑芝麻丸 100克"  target="_blank">守护你的发际线，黑芝麻丸 100克</a>
+								</div>
+								<p class="price">
+									<span>¥29</span>&nbsp;
+									<span>¥39</span>
+								</p>
+							</div>
 						</div>
-						<div style="display: block">
-						<a href="">无线电发射设备销售备案：42202011096855&nbsp;&nbsp;</a>
-						<a href="">（浙杭）网械企备字[2019]第00119号&nbsp;&nbsp;</a>
-						<p>（粤）网械平台备字（2019）第00004号&nbsp;&nbsp;</p>
-						<p>（粤）-非经营性-2016-0023</p>
+						<div class="Sesame">
+							<div class="img" title="切丝擦丝切蒜辅食 家用食物多功能料理机"></div>
+							<div class="text">
+								<div class="maked">
+									<span class="madein">杭州制造</span>
+									<span>新品限时购</span>
+								</div>
+								<div class="introduce">
+									<a href="" title="切丝擦丝切蒜辅食 家用食物多功能料理机" target="_blank">切丝擦丝切蒜辅食 家用食物多功能料理机</a>
+								</div>
+								<p class="price">
+									<span>¥28.9</span>&nbsp;
+									<span>¥29.9</span>
+								</p>
+							</div>
 						</div>
-						<div>
-						<p>浙江省网络食品销售第三方平台提供者备案：浙网食A33010009&nbsp;&nbsp;</p>
-						<a href="">单用途商业预付卡备案证：330100AAC0024</a>
+						<div class="Sesame">
+							<div class="img" title="万古不易，锁味增鲜 日本万古烧饭釜0.5L"></div>
+							<div class="text">
+								<div class="maked">
+									<span>新品限时购</span>
+								</div>
+								<div class="introduce">
+									<a href="" title="万古不易，锁味增鲜 日本万古烧饭釜0.5L" target="_blank">万古不易，锁味增鲜 日本万古烧饭釜0.5L</a>
+								</div>
+								<p class="price">
+									<span>¥129</span>&nbsp;
+									<span>¥149</span>
+								</p>
+							</div>
 						</div>
+						<div class="Sesame">
+							<div class="img" title="女式可机洗天丝平底鞋"></div>
+							<div class="text">
+								<div class="maked">
+									<span>新品限时购</span>
+								</div>
+								<div class="introduce">
+									<a href="" title="女式可机洗天丝平底鞋" target="_blank">女式可机洗天丝平底鞋</a>
+								</div>
+								<p class="price">
+									<span>¥134</span>&nbsp;
+									<span>¥149</span>
+								</p>
+							</div>
+						</div>
+						<div class="Sesame">
+							<div class="img" title="精准定量“秒”吸收，春风996电子延时喷雾"></div>
+							<div class="text">
+								<div class="maked">
+									<span>新品限时购</span>
+									<span>满赠</span>
+								</div>
+								<div class="introduce">
+									<a href="" title="精准定量“秒”吸收，春风996电子延时喷雾" target="_blank">精准定量“秒”吸收，春风996电子延时喷雾</a>
+								</div>
+								<p class="price">
+									<span>¥239</span>&nbsp;
+									<span>¥299</span>
+								</p>
+							</div>
+						</div>
+						<div class="Sesame">
+							<div class="img" title="享自由裸睡，天竺棉全棉针织拼色四件套"></div>
+							<div class="text">
+								<div class="maked">
+									<span>每满150减20券</span>
+								</div>
+								<div class="introduce">
+									<a href="" title="享自由裸睡，天竺棉全棉针织拼色四件套" target="_blank">享自由裸睡，天竺棉全棉针织拼色四件套</a>
+								</div>
+								<p class="price">
+									<span>¥219</span>
+								</p>
+							</div>
+						</div>
+						<div class="Sesame">
+							<div class="img" title="【李佳琦推荐】网易智造折叠眼部按摩仪"></div>
+							<div class="text">
+								<div class="maked">
+									<span>满300减70券</span>
+								</div>
+								<div class="introduce">
+									<a href="" title="【李佳琦推荐】网易智造折叠眼部按摩仪" target="_blank">【李佳琦推荐】网易智造折叠眼部按摩仪</a>
+								</div>
+								<p class="price">
+									<span>¥369</span>
+								</p>
+							</div>
+						</div>
+						<div class="Sesame">
+							<div class="img" title="家用可折叠仰卧健腹器"></div>
+							<div class="text">
+								<div class="maked">
+									<span>新品尝鲜价</span>
+								</div>
+								<div class="introduce">
+									<a href="" title="家用可折叠仰卧健腹器" target="_blank">家用可折叠仰卧健腹器</a>
+								</div>
+								<p class="price">
+									<span>¥359</span>&nbsp;
+									<span>¥399</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="Popularity">
+				<div class="Popularity_all">
+					<div class="name_top">
+						<h3 class="name">人气推荐</h3>
+						<ul>
+							<li>编辑推荐</li>
+							<li>热销总榜</li>
+						</ul>
+						<div class="subCateList">
+							<a href="" class="more" target="_blank">更多推荐 &gt;</a>
+						</div>
+					</div>
+					<div class="Popularitycontent">
+						<div class="Popularity_content">
+							<div class="img" title="【限量抢购中】一次性医用级三层口罩">
+								<a href="" target="_blank">
+									<img src="./images/Popularity1.webp" class="Popularity1">
+									<div class="tejia">
+										<div class="tejia_left">
+											<span>新人特价</span>
+											<div class="price">¥20</div>
+										</div>
+										<div class="tejia_right">正在抢购中</div>
+									</div>
+								</a>
+							</div>
+							<div class="text">
+								<div class="maked">
+									<span class="madein">浙江制造</span>
+									<span>新人特价</span>
+								</div>
+								<div class="introduce">
+									<a href="" title="【限量抢购中】一次性医用级三层口罩" target="_blank">【限量抢购中】一次性医用级三层口罩</a>
+								</div>
+								<p class="price">
+									<span>¥20</span>&nbsp;
+									<span>¥139</span>
+								</p>
+							</div>
+						</div>
+						<div class="Popularity_content">
+							<div class="img" title="告别啃食尴尬，秘制无骨凤爪 108克">
+								<a href="" target="_blank">
+									<img src="./images/Popularity2.webp" class="Popularity1">
+									<div class="tejia">
+										<div class="tejia_left">
+											<span>新人特价</span>
+											<div class="price">¥13起</div>
+										</div>
+										<div class="tejia_right">正在抢购中</div>
+									</div>
+								</a>
+							</div>
+							<div class="text">
+								<div class="maked">
+									<span>新人特价</span>
+								</div>
+								<div class="introduce">
+									<a href="" title="告别啃食尴尬，秘制无骨凤爪 108克" target="_blank">告别啃食尴尬，秘制无骨凤爪 108克</a>
+								</div>
+								<p class="price">
+									<span>¥13</span>&nbsp;
+									<span>¥22</span>
+								</p>
+							</div>
+						</div>
+						<div class="Popularity_content">
+							<div class="img" title="轻弹云朵居家拖鞋">
+								<a href=" target="_blank">
+									<img src="./images/Popularity3.webp" class="Popularity1">
+								</a>
+							</div>
+							<div class="text">
+								<div class="maked">
+								</div>
+								<div class="introduce">
+									<a href="" title="轻弹云朵居家拖鞋" target="_blank">轻弹云朵居家拖鞋</a>
+								</div>
+								<p class="price">
+									<span>¥9.9</span>
+								</p>
+							</div>
+						</div>
+						<div class="Popularity_content">
+							<div class="img" title="无添加蔗糖，苏打饼干 360克">
+								<a href="" target="_blank">
+									<img src="./images/Popularity4.webp" class="Popularity1">
+									<div class="tejia">
+										<div class="tejia_left">
+											<span>新人特价</span>
+											<div class="price">¥9.9起</div>
+										</div>
+										<div class="tejia_right">正在抢购中</div>
+									</div>
+								</a>
+							</div>
+							<div class="text">
+								<div class="maked">
+									<span>新人特价</span>
+								</div>
+								<div class="introduce">
+									<a href="" title="无添加蔗糖，苏打饼干 360克" target="_blank">无添加蔗糖，苏打饼干 360克</a>
+								</div>
+								<p class="price">
+									<span>¥9.9</span>&nbsp;
+									<span>¥12.8</span>
+								</p>
+							</div>
+						</div>
+						<div class="Popularity_content">
+							<div class="img" title="肉香满满，火腿猪肉罐头 198克*6">
+								<a href="" target="_blank">
+									<img src="./images/Popularity5.webp" class="Popularity1">
+									<div class="tejia">
+										<div class="tejia_left">
+											<span>可用劵</span>
+											<div class="price">8.6-8.8</div>
+										</div>
+										<div class="tejia_right">每满300-45 每满150减20</div>
+									</div>
+								</a>
+							</div>
+							<div class="text">
+								<div class="maked">
+									<span>换购</span>
+									<span>每满300减45券</span>
+								</div>
+								<div class="introduce">
+									<a href="" title="肉香满满，火腿猪肉罐头 198克*6" target="_blank">肉香满满，火腿猪肉罐头 198克*6</a>
+								</div>
+								<p class="price">
+									<span>¥129</span>
+								</p>
+							</div>
+						</div>
+						<div class="Popularity_content">
+							<div class="img" title="全价猫粮 1.8千克">
+								<a href="" target="_blank">
+									<img src="./images/Popularity6.webp" class="Popularity1">
+									<div class="tejia">
+										<div class="tejia_left">
+											<span>可用劵</span>
+											<div class="price">8.6-8.8</div>
+										</div>
+										<div class="tejia_right">每满300-45 每满150减20</div>
+									</div>
+								</a>
+							</div>
+							<div class="text">
+								<div class="maked">
+									<span>每满300减45劵</span>
+								</div>
+								<div class="introduce">
+									<a href="" title="全价猫粮 1.8千克" target="_blank">全价猫粮 1.8千克</a>
+								</div>
+								<p class="price">
+									<span>¥88</span>
+								</p>
+							</div>
+						</div>
+						<div class="Popularity_content">
+							<div class="img" title="口袋里的咖啡馆 日本浓缩胶囊咖啡液8颗装">
+								<a href="" target="_blank">
+									<img src="./images/Popularity7.webp" class="Popularity1">
+									<div class="tejia">
+										<div class="tejia_left">
+											<span>限时购</span>
+											<div class="price">¥19.9起</div>
+										</div>
+										<div class="tejia_right">正在抢购中</div>
+									</div>
+								</a>
+							</div>
+							<div class="text">
+								<div class="maked">
+									<span>限时购</span>
+								</div>
+								<div class="introduce">
+									<a href="" title="口袋里的咖啡馆 日本浓缩胶囊咖啡液8颗装" target="_blank">口袋里的咖啡馆 日本浓缩胶囊咖啡液8颗装</a>
+								</div>
+								<p class="price">
+									<span>¥19.9</span>&nbsp;
+									<span>¥21.8</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="purchase">
+				<div class="purchase_all">
+					<div class="name_top">
+						<h3 class="name">限时购</h3>
+						<div class="subCateList">
+							<a href="" class="more" target="_blank">更多抢购 &gt;</a>
+						</div>
+					</div>
+					<div class="purchasecontent">
+						<div class="purchase_left">
+							<a href="" target="_blank">
+								<div class="screenHd">14点场</div>
+								<div class="line"></div>
+								<div class="screenEndTips">距离结束还剩</div>
+								<div class="countDown">
+									<span class="w_cd">01</span>
+									<span class="colon">:</span>
+									<span class="w_cd">59</span>
+									<span class="colon">:</span>
+									<span class="w_cd">59</span>
+								</div>
+								<div class="seeMoreBtn">查看全部 &gt;</div>
+							</a>
+						</div>
+						<div class="purchase_content">
+							<div class="lt">
+								<img src="./images/purchase1.webp" title="不锈钢多尺寸厨房搅拌盆套装">
+							</div>
+							<div class="rt">
+								<a href="" target="_blank">不锈钢多尺寸厨房搅拌盆套装</a>
+								<p class="itemDes">可拌肉馅，可做色拉</p>
+								<div class="itemNum">
+									<div class="numBar">
+										<div class="numBarIn"></div>
+									</div>
+									<div class="numTips">还剩40件</div>
+								</div>
+								<div class="itemPrice">
+									<span class="aPrice">限时价
+										<span class="yuan">¥</span>
+										<span class="aPriceIn">56</span>
+									</span>
+									<span class="oPrice">¥69</span>
+								</div>
+								<a href="" class="tobuyBtn"  target="_blank">立即抢购</a>
+							</div>
+						</div>
+						<div class="purchase_content">
+							<div class="lt">
+								<img src="./images/purchase2.webp" title="三年陈普洱，新装玲珑柑普茶 130克（10颗）">
+							</div>
+							<div class="rt">
+								<a href="" target="_blank">三年陈普洱，新装玲珑柑普茶 130克（10颗）</a>
+								<p class="itemDes">自然全生晒20天，越陈越香</p>
+								<div class="itemNum">
+									<div class="numBar">
+										<div class="numBarIn"></div>
+									</div>
+									<div class="numTips">还剩11件</div>
+								</div>
+								<div class="itemPrice">
+									<span class="aPrice">限时价
+										<span class="yuan">¥</span>
+										<span class="aPriceIn">88</span>
+									</span>
+									<span class="oPrice">¥98</span>
+								</div>
+								<a href="" class="tobuyBtn" target="_blank">立即抢购</a>
+							</div>
+						</div>
+						<div class="purchase_content">
+							<div class="lt">
+								<img src="./images/purchase3.webp" title="原素·实木简约椅 2把">
+							</div>
+							<div class="rt">
+								<a href="" target="_blank">原素·实木简约椅 2把</a>
+								<p class="itemDes">性价比之选，榫卯连接</p>
+								<div class="itemNum">
+									<div class="numBar">
+										<div class="numBarIn"></div>
+									</div>
+									<div class="numTips">还剩8件</div>
+								</div>
+								<div class="itemPrice">
+									<span class="aPrice">限时价
+										<span class="yuan">¥</span>
+										<span class="aPriceIn">829</span>
+									</span>
+									<span class="oPrice">¥999</span>
+								</div>
+								<a href="" class="tobuyBtn" target="_blank">立即抢购</a>
+							</div>
+						</div>
+						<div class="purchase_content">
+							<div class="lt">
+								<img src="./images/purchase4.webp" title="1次熨烫全家1周衣物，平挂两用蒸汽式挂烫机">
+							</div>
+							<div class="rt">
+								<a href="" target="_blank">1次熨烫全家1周衣物，平挂两用蒸汽式挂烫机</a>
+								<p class="itemDes">平烫挂烫一机两用</p>
+								<div class="itemNum">
+									<div class="numBar">
+										<div class="numBarIn"></div>
+									</div>
+									<div class="numTips">还剩15件</div>
+								</div>
+								<div class="itemPrice">
+									<span class="aPrice">限时价
+										<span class="yuan">¥</span>
+										<span class="aPriceIn">329</span>
+									</span>
+									<span class="oPrice">¥399</span>
+								</div>
+								<a href="" class="tobuyBtn" target="_blank">立即抢购</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="welfare">
+				<div class="welfare_all">
+					<div class="name_top">
+						<h3 class="name">福利社</h3>
+						<div class="subCateList">
+							<a href="" class="more" target="_blank">查看全部福利 &gt;</a>
+						</div>
+					</div>
+					<div class="welfarecontent">
+						<div class="welfare_left">
+							<a href="https://act.you.163.com/act/pub/EKRvjFTneSHU.html" target="_blank">
+								<img src="./images/welfare_left.webp">
+							</a>
+						</div>
+						<div class="welfare_right">
+							<div class="wr1">
+								<div class="wr_name">
+									<span>今日特价</span>
+									<a href="" target="_blank">查看全部 &gt;</a>
+								</div>
+								<div class="wr1_con">
+									<div class="wr1_content">
+										<a href="" class="wr1_webp" target="_blank">
+											<img src="./images/wr1_1.webp">
+										</a>
+										<div class="wr1_text">
+											<div class="wr1_name"><a href="" target="_blank">【丁磊直播款】多功能人体工学转椅</a>
+											</div>
+											<div class="limitPrice">
+												<span>限时价</span>
+												<span class="yen">¥</span>
+												<span class="num">1199</span>
+											</div>
+											<div class="counterPrice"><span>¥1399</span></div>
+											<div class="wr_button"><a href="" target="_blank">立即抢购</a>
+											</div>
+										</div>
+									</div>
+									<div class="wr1_content">
+										<a href="" class="wr1_webp" target="_blank">
+											<img src="./images/wr1_2.webp">
+										</a>
+										<div class="wr1_text">
+											<div class="wr1_name"><a href="" target="_blank">【限量抢购中】一次性医用级三层口罩</a>
+											</div>
+											<div class="limitPrice">
+												<span>限时价</span>
+												<span class="yen">¥</span>
+												<span class="num">20</span>
+											</div>
+											<div class="counterPrice"><span>¥139</span></div>
+											<div class="wr_button"><a href="" target="_blank">立即抢购</a>
+											</div>
+										</div>
+									</div>
+									<div class="wr1_content">
+										<a href="" class="wr1_webp" target="_blank">
+											<img src="./images/wr1_3.webp">
+										</a>
+										<div class="wr1_text">
+											<div class="wr1_name"><a href="" target="_blank">医用外科口罩</a>
+											</div>
+											<div class="limitPrice">
+												<span>限时价</span>
+												<span class="yen">¥</span>
+												<span class="num">25</span>
+											</div>
+											<div class="counterPrice"><span>¥39</span></div>
+											<div class="wr_button"><a href="" target="_blank">立即抢购</a>
+											</div>
+										</div>
+									</div>
+									<div class="wr1_content">
+										<a href="" class="wr1_webp" target="_blank">
+											<img src="./images/wr1_4.webp">
+										</a>
+										<div class="wr1_text">
+											<div class="wr1_name"><a href="" target="_blank">15分钟缓解颈椎酸痛，EMS颈椎按摩仪</a>
+											</div>
+											<div class="limitPrice">
+												<span>限时价</span>
+												<span class="yen">¥</span>
+												<span class="num">199</span>
+											</div>
+											<div class="counterPrice"><span>¥329</span></div>
+											<div class="wr_button"><a href="" target="_blank">立即抢购</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="wr2">
+								<div class="wr_name">
+									<span>量贩囤货</span>
+									<a href="" target="_blank">全部 &gt;</a>
+								</div>
+								<div class="moduleBd">
+									<div class="item">
+										<a href="https://you.163.com/item/detail?id=3829116" class="wr2_webp" target="_blank">
+											<img src="./images/wr2_1.webp">
+										</a>
+										<div class="wr2_text">
+											<div class="wr2_name">
+												<a href="https://you.163.com/item/detail?id=3829116" target="_blank">本色抑菌懒人抹布超值组</a>
+											</div>
+											<div class="price">
+												<span class="limitPrice">¥89</span>
+												<span class="counterPrice">¥119</span>
+												<a href="https://you.163.com/item/detail?id=3829116" class="wr2_cart" target="_blank">
+													<i></i>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<a href="https://you.163.com/item/detail?id=3826053" class="wr2_webp" target="_blank">
+											<img src="./images/wr2_2.webp">
+										</a>
+										<div class="wr2_text">
+											<div class="wr2_name">
+												<a href="https://you.163.com/item/detail?id=3826053" target="_blank">三味演义冻干方便面 12盒</a>
+											</div>
+											<div class="price">
+												<span class="limitPrice">¥79</span>
+												<a href="https://you.163.com/item/detail?id=3826053" class="wr2_cart" target="_blank">
+													<i></i>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="wr2">
+								<div class="wr_name">
+									<span>今日买赠</span>
+									<a href="" target="_blank">全部 &gt;</a>
+								</div>
+								<div class="moduleBd">
+									<div class="item">
+										<a href="https://you.163.com/item/detail?id=1497001" class="wr2_webp" target="_blank">
+											<img src="./images/wr2_3.webp">
+										</a>
+										<div class="wr2_text">
+											<div class="wr2_name">
+												<a href="https://you.163.com/item/detail?id=1497001" target="_blank">超人气爆款断货王，智能马桶盖经典版</a>
+											</div>
+											<div class="price">
+												<span class="limitPrice">¥1399</span>
+												<a href="https://you.163.com/item/detail?id=1497001" class="wr2_cart" target="_blank">
+													<i></i>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<a href="https://you.163.com/item/detail?id=3465038" class="wr2_webp" target="_blank">
+											<img src="./images/wr2_4.webp">
+										</a>
+										<div class="wr2_text">
+											<div class="wr2_name">
+												<a href="https://you.163.com/item/detail?id=3465038" target="_blank">销魂黑科技，春风黑洞变速伸缩飞机杯 12盒</a>
+											</div>
+											<div class="price">
+												<span class="limitPrice">¥449</span>
+												<span class="counterPrice">¥499</span>
+												<a href="https://you.163.com/item/detail?id=3465038" class="wr2_cart" target="_blank">
+													<i></i>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="m-indexCates">
+				<div class="family_life">
+					<div class="name_top">
+						<h3 class="name">居家生活</h3>
+						<div class="subCateList">
+							<a href="" class="cateitem" target="_blank">口碑好物</a>
+							<b>/</b>
+							<a href="" class="cateitem" target="_blank">主题床品</a>
+							<b>/</b>
+							<a href="" class="cateitem" target="_blank">抑菌防螨</a>
+							<b>/</b>
+							<a href="" class="cateitem" target="_blank">春夏好物</a>
+							<b>/</b>
+							<a href="" class="cateitem" target="_blank">北欧原木</a>
+							<b>/</b>
+							<a href="" class="cateitem" target="_blank">餐厨爆款清单</a>
+							<b>/</b>
+							<a href="" class="cateitem" target="_blank">床品件套</a>
+							<a href="" class="more" target="_blank">查看更多 &gt;</a>
+						</div>
+					</div>
+					<div class="img"></div>
+					<div class="family_life_content">
+						<div class="Sesame">
+							<div class="img" title="耐热玻璃把手杯 防滑带杯盖 会变色的小胖喵"></div>
+							<div class="text">
+								<div class="maked">
+									<span>每满200减25券</span>
+								</div>
+								<div class="introduce">
+									<a href="" title="耐热玻璃把手杯 防滑带杯盖 会变色的小胖喵" target="_blank">耐热玻璃把手杯 防滑带杯盖 会变色的小胖喵</a>
+								</div>
+								<p class="price">
+									<span>49</span>
+								</p>
+							</div>
+						</div>
+						<div class="Sesame">
+							<div class="img" title="AB面乳胶独立弹簧床垫 升级款"></div>
+							<div class="text">
+								<div class="maked">
+									<span class="madein">浙江制造</span>
+									<span>每满200减25券</span>
+								</div>
+								<div class="introduce">
+									<a href="" title="AB面乳胶独立弹簧床垫 升级款" target="_blank">AB面乳胶独立弹簧床垫 升级款</a>
+								</div>
+								<p class="price">
+									<span>¥2599</span>
+								</p>
+							</div>
+						</div>
+						<div class="Sesame">
+							<div class="img" title="烹饪样样精通 珠光黄铸铁珐琅锅22cm"></div>
+							<div class="text">
+								<div class="maked">
+									<span>限时购</span>
+								</div>
+								<div class="introduce">
+									<a href="" title="烹饪样样精通 珠光黄铸铁珐琅锅22cm" target="_blank">烹饪样样精通 珠光黄铸铁珐琅锅22cm</a>
+								</div>
+								<p class="price">
+									<span>¥209</span>&nbsp;
+									<span>¥288</span>
+								</p>
+							</div>
+						</div>
+						<div class="Sesame">
+							<div class="img" title="日式全棉格纹四件套 新款"></div>
+							<div class="text">
+								<div class="maked">
+									<span>每满200减25券</span>
+								</div>
+								<div class="introduce">
+									<a href="" title="日式全棉格纹四件套 新款" target="_blank">日式全棉格纹四件套 新款</a>
+								</div>
+								<p class="price">
+									<span>¥299</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="Selectors">
+				<div class="Selectors_all">
+					<div class="name_top">
+						<h3 class="name">甄选家</h3>
+						<span>我们在寻找，对生活有态度的你</span>
+					</div>
+					<div class="Selectors_Content">
+						<a href="" target="_blank" target="_blank">
+							<img src="./images/Selectors1.webp">
+						</a>
+						<a href="" target="_blank" target="_blank">
+							<img src="./images/Selectors2.webp">
+						</a>
+						<a href="" target="_blank" target="_blank">
+							<img src="./images/Selectors3.webp">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="footer-top">
+				<div class="footer_top_left">
+					<h4>客户服务</h4>
+					<a href="" class="customer_service">
+						<i></i>
+						<div>在线客服</div>
+					</a>
+					<a href="" class="feedback">
+						<i></i>
+						<div>用户反馈</div>
+					</a>
+				</div>
+				<div class="footer_top_center">
+					<h4>何为严选</h4>
+					<p>网易原创生活类电商品牌，秉承网易一贯的严谨态度，我们深入世界各地，从源头全程严格把控商品生产环节，力求帮消费者甄选到优质的商品</p>
+					<div>
+						<span>关注我们 :</span>
+						<i class="yx">
+							<div>
+								<img src="./images/yx.webp">
+							</div>
+						</i>
+						<i class="wx">
+							<div>
+								<img src="./images/wx.webp">
+							</div>
+						</i>
+						<i class="wb"></i>
+					</div>
+				</div>
+				<div class="footer_top_right">
+					<h4>扫码下载严选APP</h4>
+					<i></i>
+					<div>下载领大额新人红包</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="footer-bottom_all">
+					<ul class="footer_bottom_top">
+						<li><i></i>网易自营电商</li>
+						<li><a href="https://you.163.com/help/new#157"><i></i>30天无忧退换货</a></li>
+						<li><i></i>满99元免邮费</li>
+						<li><i></i>品质保证</li>
+					</ul>
+					<div class="footer_bottom_bottom">
+						<p>
+							<a href="https://you.163.com/story" target="_blank">关于我们</a> 
+							| <a href="https://you.163.com/help/new" target="_blank">帮助中心</a> 
+							| <a href="https://you.163.com/help/new#6" target="_blank">售后服务</a> 
+							| <a href="https://you.163.com/help/new#3" target="_blank">配送与验收</a> 
+							| <a href="https://you.163.com/help/new#39" target="_blank">商务合作</a> 
+							| <a href="http://b.you.163.com/?from=yx" target="_blank">企业采购</a> 
+							| <a href="https://open.you.163.com/" target="_blank">开放平台</a> 
+							| <a href="https://you.163.com/product/keywords?letter=A&page=1" target="_blank">搜索推荐</a> 
+							| <a href="https://you.163.com/friendLink" target="_blank">友情链接</a> 
+							| <a href="https://jubao.163.com/" target="_blank">廉正举报</a> 
+						</p>
+						<p>
+							<a href="https://yanxuan.nosdn.127.net/63dc121f9ebc448214eb353b5d971335.png?imageView" target="_blank">食品经营许可证：JY13301080111719</a> 
+							<a href="https://yanxuan.nosdn.127.net/4260909347cabf4ff9eb39694f35084f.png?imageView" target="_blank">出版物经营许可证：新出发滨字第0132号</a> 
+							妙得ICP证号：ICP 证浙B2-20160106 
+							<a href="https://yanxuan.nosdn.127.net/1b4a91a8e67addaa8b50c3be0b4c91a3.png?imageView" target="_blank">浙杭食药监械经营备20171029号</a> 
+							<a href="https://yanxuan.nosdn.127.net/39754779c3b8f63e364011235738768c.png?imageView" target="_blank">营业执照</a> 
+							网易公司版权所有 © 1997-2020
+						</p>
+						<p>
+							<a href="http://xsba.miit.gov.cn/static/mobile.html?dealerId=64701B926B16170C13A4BE58EDE05954" target="_blank">无线电发射设备销售备案：42202011096855</a> 
+							<a href="http://ewm.zjfda.gov.cn:8088/qcode.action?id=0000000069A47A7D0169A492778E07C6&user_type=WLFW" target="_blank">（浙杭）网械企备字[2019]第00119号</a> 
+							（粤）网械平台备字（2019）第00004号 &nbsp; 
+							（粤）-非经营性-2016-0023
+						</p>
+						<p>
+							浙江省网络食品销售第三方平台提供者备案：浙网食A33010009 &nbsp; 
+							<a href="https://yanxuan.nosdn.127.net/6cde1bda2586dd9b163ea867b581a3e6.png?imageView" target="_blank">单用途商业预付卡备案证：330100AAC0024</a>
+							<a href="http://idinfo.zjamr.zj.gov.cn/bscx.do?method=lzxx&id=3301083301080000060604" target="_blank"><img src="./images/ft.gif"></a>
+						</p>
 					</div>
 				</div>
 			</div>

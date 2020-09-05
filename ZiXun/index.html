@@ -65,13 +65,18 @@
             <form action="">
                 <div>登录</div>
                 <br>
-                <label for="username">用户名:</label><input type="text" placeholder="请输入用户名" id="username">
+                <label for="username">用户名:&nbsp;</label><input type="text" placeholder="请输入用户名" id="username">
                 <br><br>
-                <label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;码:</label><input type="text" placeholder="请输入密码" id="password">
+                <label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;码:&nbsp;</label><input type="text" placeholder="请输入密码" id="password">
                 <br>
                 <br>
                 <button type="button" class="btn btn-primary">登录</button>
             </form>
+            <br>
+            <div>
+                用户名：admin2
+            </div>
+            <div>密码：123321</div>
             
         </div>
     </div>
@@ -85,7 +90,7 @@
             var password = $('#password').val();
             // 2.请求登录接口
             $.ajax({
-                url:'http://localhost:7788/user/login',
+                url:'http://47.93.255.92:7788/user/login',
                 method:'POST',
                 data:JSON.stringify({
                     password,
@@ -102,7 +107,7 @@
                     })
                     // 将token设置到浏览器中
                     localStorage.setItem('token',res.data.token);
-                    $.get('http://localhost:7788/user/info',{token:res.data.token},function(res){
+                    $.get('http://47.93.255.92:7788/user/info',{token:res.data.token},function(res){
                         // console.log(res);
                         // 将用户信息存储到浏览器
                         localStorage.setItem('userInfo',JSON.stringify(res.data))

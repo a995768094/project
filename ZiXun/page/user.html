@@ -1,1 +1,179 @@
-<div>用户管理</div>
+<div class="btns">
+    <button type="button" class="btn btn-primary" id="add_btn">新增</button>
+    <button type="button" class="btn btn-info">查询</button>
+</div>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">编号</th>
+        <th scope="col">姓名</th>
+        <th scope="col">性别</th>
+        <th scope="col">电话</th>
+        <th scope="col">操作</th>
+      </tr>
+      
+    </thead>
+    <tbody>
+      
+    </tbody>
+  </table>
+  <!-- model -->
+  <div class="modal fade" id="myModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="add_user">新增用户</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="user_name">用户姓名</label>
+              <input type="email" class="form-control" id="user_name" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group">
+                <label for="user_password">用户密码</label>
+                <input type="text" class="form-control" id="user_password" aria-describedby="emailHelp">
+              </div>
+            <div class="form-group">
+              <label for="user_gender">用户性别</label>
+              <select class="form-control" id="user_gender">
+                <option value="male">male</option>
+                <option value="female">female</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="user_telephone">用户电话</label>
+              <input type="tel" class="form-control" id="user_telephone" aria-describedby="emailHelp">
+            </div>
+            
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary" id="true_btn">保存</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+      var allData;
+      var id;
+    // 获取token并且设置到请求头中
+    var token = localStorage.getItem('token');
+    $.ajaxSetup({
+      headers:{
+        'Authorization':token
+      }
+    })
+    // 5.修改
+    $('tbody').on('click','.edit_btn',function(res){
+        // console.log(allData);
+        id = $(this).closest('tr').find('input').val();
+        // 显示模态框
+        $('#myModal').modal('show');
+        // 遍历查找
+        
+        var editData = allData.filter(function(item){
+            return item.id == id;
+        })
+        console.log(editData)
+        // $('input').val(editData[0].id);
+        // console.log(id);
+        // console.log($(this).closest('tr').find('input').val(editData[0].id))
+        $('#user_name').val(editData[0].username);
+        $('#user_password').val(editData[0].password);
+        $('#user_gender').val(editData[0].gender);
+        $('#user_telephone').val(editData[0].telephone);
+    })
+    // 4.删除事件代理
+    $('tbody').on('click','.delete_btn',function(res){
+        var id = $(this).closest('tr').find('input').val();
+        $.get('http://47.93.255.92:7788/baseUser/deleteById',
+        {id},
+        function(res){
+            if(res.status == 200){
+                findAllUser()
+            }
+            alert(res.message);
+        }
+        )
+    })
+    // 3.新增用户
+    $('#true_btn').click(function(){
+        // 3.1获取文本框中的值
+        // var id = $('#user_id').val();
+        var username = $('#user_name').val();
+        var password = $('#user_password').val();
+        var gender = $('#user_gender').val();
+        var telephone = $('#user_telephone').val();
+        // 3.2判断是否有id
+        if(id){
+            var data = {
+                id,
+                username,
+                password,
+                gender,
+                telephone
+            }
+        }
+            else{
+            var data = {
+                username,
+                password,
+                gender,
+                telephone
+                }
+        }
+        
+        // 3.3发送数据
+        $.post('http://47.93.255.92:7788/baseUser/saveOrUpdate',
+        data,
+        function(res){
+            // 3.4关闭模态框
+            $('#myModal').modal('hide');
+            // 3.5刷新数据
+            if(res.status==200){
+                findAllUser()
+            }
+            alert(res.message);
+        })
+    })
+    // 2.显示模态框
+    $('#add_btn').on('click',function(){
+        $('#myModal').modal('show');
+        id ='';
+        $('#user_name').val('');
+        $('#user_password').val('');
+        $('#user_gender').val('');
+        $('#user_telephone').val('');
+
+    })
+    //   1.查询所有用户
+    function findAllUser(){
+        $.get('http://47.93.255.92:7788/baseUser/findAll',
+        function(item){
+            $('tbody').empty();
+            item.data.forEach(function(res){
+                var newTr = $(`
+                <tr>
+                    <td><input type="checkbox" value="`+res.id+`"></td>
+                    <td>`+res.username+`</td>
+                    <td>`+res.gender+`</td>
+                    <td>`+res.telephone+`</td>
+                    <td>
+                        <span class="edit_btn">修改</span>
+                        <span class="delete_btn">删除</span>
+                    </td>
+                </tr>
+                `)
+            $('tbody').append(newTr);
+        })
+    allData = item.data;
+        })
+       
+    }
+    findAllUser();
+  </script>
